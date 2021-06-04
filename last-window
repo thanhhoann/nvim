@@ -1,0 +1,8 @@
+bind: Unknown option '-r'
+
+.tmux.conf (line 7): 
+bind -r ^ last-window
+^
+from sourcing file .tmux.conf
+
+(Type 'help bind' for related documentation)

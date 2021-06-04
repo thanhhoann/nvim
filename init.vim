@@ -39,6 +39,9 @@ Plug 'kabouzeid/nvim-lspinstall'
 " AUTO-COMPLETION "
 Plug 'hrsh7th/nvim-compe'
 Plug 'jiangmiao/auto-pairs'
+Plug 'hrsh7th/vim-vsnip'
+Plug 'hrsh7th/vim-vsnip-integ'
+
 
 call plug#end()
 
