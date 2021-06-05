@@ -1,4 +1,3 @@
-
 "----------------------------------------"
 "----------- PLUGINS --------------------"
 "----------------------------------------"
@@ -19,6 +18,7 @@ Plug 'kyazdani42/nvim-web-devicons'
 Plug 'https://github.com/ryanoasis/vim-devicons'
 Plug 'https://github.com/adelarsq/vim-devicons-emoji'
 Plug 'mhinz/vim-startify'
+Plug 'romgrk/barbar.nvim'
 
 " LSP "
 Plug 'neovim/nvim-lspconfig'
