@@ -18,6 +18,7 @@ Plug 'edkolev/tmuxline.vim'
 Plug 'kyazdani42/nvim-web-devicons' 
 Plug 'https://github.com/ryanoasis/vim-devicons'
 Plug 'https://github.com/adelarsq/vim-devicons-emoji'
+Plug 'mhinz/vim-startify'
 
 " LSP "
 Plug 'neovim/nvim-lspconfig'
@@ -48,6 +49,7 @@ source $HOME/.config/nvim/plugins/telescope.vim
 source $HOME/.config/nvim/plugins/compe.vim
 source $HOME/.config/nvim/plugins/nvim-tree.vim
 source $HOME/.config/nvim/plugins/lsp-install.vim
+source $HOME/.config/nvim/plugins/startify.vim
 
 source $HOME/.config/nvim/keymaps.vim
 source $HOME/.config/nvim/themes.vim
