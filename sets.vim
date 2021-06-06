@@ -16,3 +16,7 @@ set termguicolors
 set scrolloff=30
 set completeopt=menuone,noselect
 highlight EndOfBuffer ctermfg=black ctermbg=black
+
+
+" for treesitter dap_virtual_text 
+let g:dap_virtual_text = v:true

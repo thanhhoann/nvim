@@ -30,10 +30,7 @@ require'nvim-treesitter.configs'.setup {
 }
 EOF
 
-set foldmethod=expr
-set foldexpr=nvim_treesitter#foldexpr()
 
 " Statusline indicator
-echo nvim_treesitter#statusline(90)  " 90 can be any length
-module->expression_statement->call->identifier
+echo nvim_treesitter#statusline(90) 
 
