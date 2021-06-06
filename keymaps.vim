@@ -1,13 +1,13 @@
 
 " telescope 
-nnoremap <Leader>pp :lua require'telescope.builtin'.file_browser{}
-nnoremap <Leader>.. :lua require'telescope.builtin'.oldfiles{}
+nnoremap <Leader>eu :lua require'telescope.builtin'.current_buffer_fuzzy_find{}<CR>
+nnoremap <Leader>.. :lua require'telescope.builtin'.oldfiles(require('telescope.themes').get_dropdown({ winblend = 10 }))<CR>
+
 
 " Delete word backwards
 nnoremap dw vb"_d
 
 " Select all
-nmap <C-a> gg<S-v>G
 
 "-------------------------------------------------------------------------------
 " Tabs
@@ -23,16 +23,6 @@ nmap <Tab> :tabnext<Return>
 " Split window
 nmap ss :split<Return><C-w>w
 nmap sv :vsplit<Return><C-w>w
-" Move window
-nmap <Space> <C-w>w
-map s<left> <C-w>h
-map s<up> <C-w>k
-map s<down> <C-w>j
-map s<right> <C-w>l
-map sh <C-w>h
-map sk <C-w>k
-map sj <C-w>j
-map sl <C-w>l
 " Resize window
 nmap <C-w><left> <C-w><
 nmap <C-w><right> <C-w>>

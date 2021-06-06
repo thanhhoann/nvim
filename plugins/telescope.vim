@@ -1,5 +1,6 @@
 lua << EOF
-require'nvim-web-devicons'.get_icons()
+-- This will load fzy_native and have it override the default file sorter
+
 require('telescope').setup{
   defaults = {
     vimgrep_arguments = {
@@ -31,10 +32,6 @@ require('telescope').setup{
     file_ignore_patterns = {},
     generic_sorter =  require'telescope.sorters'.get_generic_fuzy_sorter,
     shorten_path = true,
-    winblend = 0,
-    width = 0.75,
-    preview_cutoff = 120,
-    results_height = 1,
     results_width = 0.8,
     border = {},
     borderchars = { '─', '│', '─', '│', '╭', '╮', '╯', '╰' },
@@ -49,4 +46,7 @@ require('telescope').setup{
     buffer_previewer_maker = require'telescope.previewers'.buffer_previewer_maker
   }
 }
+require('telescope').load_extension('fzy_native')
+
+require'nvim-web-devicons'.get_icons()
 EOF
