@@ -1,3 +1,5 @@
+
+set nocompatible
 set noswapfile
 set nobackup
 set exrc
@@ -16,6 +18,7 @@ set scrolloff=30
 highlight EndOfBuffer ctermfg=black ctermbg=black
 highlight Comment ctermfg=Blue
 
+
 " For lsp completion
 set completeopt=menuone,noselect,noinsert
 let g:completion_matching_strategy_list = ['exact', 'substring', 'fuzzy']
@@ -26,3 +29,4 @@ let g:deoplete#enable_at_startup = 1
 
 set background=dark
 set termguicolors
+

@@ -50,7 +50,6 @@ Plug 'https://github.com/romgrk/barbar.nvim.git'
 Plug 'kyazdani42/nvim-web-devicons' 
 Plug 'https://github.com/ryanoasis/vim-devicons'
 Plug 'https://github.com/adelarsq/vim-devicons-emoji'
-Plug 'itchyny/lightline.vim'
 Plug 'edkolev/tmuxline.vim'
 
 " dashboard
@@ -59,6 +58,8 @@ Plug 'mhinz/vim-startify'
 " colorscheme
 Plug 'DilanGMB/nebulous.nvim'
 Plug 'hoob3rt/lualine.nvim'
+Plug 'sheerun/vim-polyglot'
+Plug 'pineapplegiant/spaceduck', { 'branch': 'main' }
 
 call plug#end()
 
