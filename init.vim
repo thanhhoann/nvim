@@ -27,14 +27,12 @@ Plug 'folke/trouble.nvim'
 " LSP "
 Plug 'neovim/nvim-lspconfig'
 Plug 'kabouzeid/nvim-lspinstall'
-Plug 'ray-x/lsp_signature.nvim'
 
 " one-and-only-Git-plugin
 Plug 'tpope/vim-fugitive'
 
 " AUTO-COMPLETION "
 Plug 'https://github.com/hrsh7th/nvim-compe.git'
-Plug 'tzachar/compe-tabnine', { 'do': './install.sh' }
 Plug 'jiangmiao/auto-pairs'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'roxma/nvim-yarp'
@@ -43,6 +41,8 @@ Plug 'roxma/vim-hug-neovim-rpc'
 " keymaps-remembering helper
 Plug 'folke/which-key.nvim'
 
+" Tab control
+Plug 'https://github.com/romgrk/barbar.nvim.git'
 
 "---------- CUSTOMIZATION ---------------"
 

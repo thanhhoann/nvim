@@ -16,9 +16,6 @@ set scrolloff=30
 highlight EndOfBuffer ctermfg=black ctermbg=black
 highlight Comment ctermfg=Blue
 
-" For treesitter dap_virtual_text 
-let g:dap_virtual_text = v:true
-
 " For lsp completion
 set completeopt=menuone,noselect,noinsert
 let g:completion_matching_strategy_list = ['exact', 'substring', 'fuzzy']

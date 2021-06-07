@@ -18,16 +18,6 @@ let g:compe.source.calc = v:true
 let g:compe.source.nvim_lsp = v:true
 let g:compe.source.nvim_lua = v:true
 
-" tabnine + compe
- let g:compe.source.tabnine = v:true
-let g:compe.source.tabnine = {}
-let g:compe.source.tabnine.max_line = 1000
-let g:compe.source.tabnine.max_num_results = 6
-let g:compe.source.tabnine.priority = 5000
-" setting sort to false means compe will leave tabnine to sort the completion items
-let g:compe.source.tabnine.sort = v:false
-let g:compe.source.tabnine.show_prediction_strength = v:true
-let g:compe.source.tabnine.ignore_pattern = ''
 
 
 lua << EOF
@@ -59,13 +49,12 @@ end
 _G.s_tab_complete = function()
   if vim.fn.pumvisible() == 1 then
     return t "<C-p>"
-  elseif vim.fn.call("vsnip#jumpable", {-1}) == 1 then
-    return t "<Plug>(vsnip-jump-prev)"
-  else
+ else
     -- If <S-Tab> is not working in your terminal, change it to <C-h>
     return t "<S-Tab>"
   end
 end
+
 
 vim.api.nvim_set_keymap("i", "<Tab>", "v:lua.tab_complete()", {expr = true})
 vim.api.nvim_set_keymap("s", "<Tab>", "v:lua.tab_complete()", {expr = true})
