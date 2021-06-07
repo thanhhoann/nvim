@@ -16,12 +16,16 @@ set scrolloff=30
 highlight EndOfBuffer ctermfg=black ctermbg=black
 highlight Comment ctermfg=Blue
 
-" for treesitter dap_virtual_text 
+" For treesitter dap_virtual_text 
 let g:dap_virtual_text = v:true
 
-" for lsp completion
+" For lsp completion
 set completeopt=menuone,noselect,noinsert
 let g:completion_matching_strategy_list = ['exact', 'substring', 'fuzzy']
+
+" For deoplete - Dark powered asynchronous completion framework for
+" neovim/Vim8, I guess
+let g:deoplete#enable_at_startup = 1
 
 set background=dark
 set termguicolors

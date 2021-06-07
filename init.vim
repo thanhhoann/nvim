@@ -33,8 +33,12 @@ Plug 'ray-x/lsp_signature.nvim'
 Plug 'tpope/vim-fugitive'
 
 " AUTO-COMPLETION "
-Plug 'hrsh7th/nvim-compe'
+Plug 'https://github.com/hrsh7th/nvim-compe.git'
+Plug 'tzachar/compe-tabnine', { 'do': './install.sh' }
 Plug 'jiangmiao/auto-pairs'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'roxma/nvim-yarp'
+Plug 'roxma/vim-hug-neovim-rpc'
 
 " keymaps-remembering helper
 Plug 'folke/which-key.nvim'
@@ -53,8 +57,6 @@ Plug 'edkolev/tmuxline.vim'
 Plug 'mhinz/vim-startify' 
 
 " colorscheme
-Plug 'shaunsingh/moonlight.nvim'
-Plug 'folke/tokyonight.nvim'
 Plug 'DilanGMB/nebulous.nvim'
 Plug 'hoob3rt/lualine.nvim'
 
@@ -67,8 +69,8 @@ call plug#end()
 
 lua require('init')
 
-source $HOME/.config/nvim/plugins/telescope.vim
 source $HOME/.config/nvim/plugins/compe.vim
+source $HOME/.config/nvim/plugins/telescope.vim
 source $HOME/.config/nvim/plugins/nvim-tree.vim
 source $HOME/.config/nvim/plugins/lsp-install.vim
 source $HOME/.config/nvim/plugins/treesitter.vim

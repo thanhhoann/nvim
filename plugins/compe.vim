@@ -11,22 +11,24 @@ let g:compe.max_abbr_width = 100
 let g:compe.max_kind_width = 100
 let g:compe.max_menu_width = 100
 let g:compe.documentation = v:true
-
 let g:compe.source = {}
 let g:compe.source.path = v:true
 let g:compe.source.buffer = v:true
 let g:compe.source.calc = v:true
 let g:compe.source.nvim_lsp = v:true
 let g:compe.source.nvim_lua = v:true
-let g:compe.source.vsnip = v:true
-let g:compe.source.ultisnips = v:true
 
+" tabnine + compe
+ let g:compe.source.tabnine = v:true
+let g:compe.source.tabnine = {}
+let g:compe.source.tabnine.max_line = 1000
+let g:compe.source.tabnine.max_num_results = 6
+let g:compe.source.tabnine.priority = 5000
+" setting sort to false means compe will leave tabnine to sort the completion items
+let g:compe.source.tabnine.sort = v:false
+let g:compe.source.tabnine.show_prediction_strength = v:true
+let g:compe.source.tabnine.ignore_pattern = ''
 
-inoremap <silent><expr> <C-Space> compe#complete()
-inoremap <silent><expr> <CR>      compe#confirm('<CR>')
-inoremap <silent><expr> <C-e>     compe#close('<C-e>')
-inoremap <silent><expr> <C-f>     compe#scroll({ 'delta': +4 })
-inoremap <silent><expr> <C-d>     compe#scroll({ 'delta': -4 })
 
 lua << EOF
 local t = function(str)
@@ -48,8 +50,6 @@ end
 _G.tab_complete = function()
   if vim.fn.pumvisible() == 1 then
     return t "<C-n>"
-  elseif vim.fn.call("vsnip#available", {1}) == 1 then
-    return t "<Plug>(vsnip-expand-or-jump)"
   elseif check_back_space() then
     return t "<Tab>"
   else
