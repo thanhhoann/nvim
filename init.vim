@@ -16,17 +16,29 @@ Plug 'kyazdani42/nvim-tree.lua'
 " Comment
 Plug 'gennaro-tedesco/nvim-commaround'
 
-" code interating, I guess
-Plug 'https://github.com/yamatsum/nvim-cursorline.git'
-
-" Neovim Tree shitter
+" Tree sitter
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-treesitter/playground'
 Plug 'nvim-treesitter/nvim-treesitter-refactor'
 
-" Debug tools
-Plug 'puremourning/vimspector', { 'do': 'python3 install_gadget.py --enable-c'}
-Plug 'nvim-telescope/telescope-vimspector.nvim'
+" LSP diagnosing
+Plug 'folke/trouble.nvim'
+
+" LSP "
+Plug 'neovim/nvim-lspconfig'
+Plug 'kabouzeid/nvim-lspinstall'
+Plug 'ray-x/lsp_signature.nvim'
+
+" one-and-only-Git-plugin
+Plug 'tpope/vim-fugitive'
+
+" AUTO-COMPLETION "
+Plug 'hrsh7th/nvim-compe'
+Plug 'jiangmiao/auto-pairs'
+
+" keymaps-remembering helper
+Plug 'folke/which-key.nvim'
+
 
 "---------- CUSTOMIZATION ---------------"
 
@@ -41,28 +53,10 @@ Plug 'edkolev/tmuxline.vim'
 Plug 'mhinz/vim-startify' 
 
 " colorscheme
-Plug 'marko-cerovac/material.nvim'
-
-" LSP "
-Plug 'neovim/nvim-lspconfig'
-Plug 'kabouzeid/nvim-lspinstall'
-
-" one-and-only-Git-plugin
-Plug 'tpope/vim-fugitive'
-
-" AUTO-COMPLETION "
-Plug 'hrsh7th/nvim-compe'
-Plug 'jiangmiao/auto-pairs'
-Plug 'hrsh7th/vim-vsnip'
-Plug 'hrsh7th/vim-vsnip-integ'
-
-" Quickfix 
-Plug 'kevinhwang91/nvim-bqf'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } 
-Plug 'mhinz/vim-grepper'
-
-" keymaps-remembering helper
-Plug 'folke/which-key.nvim'
+Plug 'shaunsingh/moonlight.nvim'
+Plug 'folke/tokyonight.nvim'
+Plug 'DilanGMB/nebulous.nvim'
+Plug 'hoob3rt/lualine.nvim'
 
 call plug#end()
 
@@ -78,6 +72,7 @@ source $HOME/.config/nvim/plugins/compe.vim
 source $HOME/.config/nvim/plugins/nvim-tree.vim
 source $HOME/.config/nvim/plugins/lsp-install.vim
 source $HOME/.config/nvim/plugins/treesitter.vim
+source $HOME/.config/nvim/plugins/lualine.vim
 source $HOME/.config/nvim/plugins/startify.vim
 
 source $HOME/.config/nvim/keymaps.vim

@@ -1,8 +1,10 @@
 
 " telescope 
 nnoremap <Leader>eu :lua require'telescope.builtin'.current_buffer_fuzzy_find{}<CR>
-nnoremap <Leader>.. :lua require'telescope.builtin'.oldfiles(require('telescope.themes').get_dropdown({ winblend = 10 }))<CR>
+nnoremap <Leader>.. :lua require'telescope.builtin'.oldfiles(require('telescope.themes').get_ivy({ winblend = 0 }))<CR>
 
+" trouble.nvim
+nnoremap <leader>xx <cmd>TroubleToggle<cr>
 
 " Delete word backwards
 nnoremap dw vb"_d
