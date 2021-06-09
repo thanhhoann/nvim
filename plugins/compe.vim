@@ -52,6 +52,10 @@ _G.s_tab_complete = function()
  else
     -- If <S-Tab> is not working in your terminal, change it to <C-h>
     return t "<S-Tab>"
+
+
+
+    
   end
 end
 

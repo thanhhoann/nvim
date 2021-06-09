@@ -32,11 +32,8 @@ Plug 'kabouzeid/nvim-lspinstall'
 Plug 'tpope/vim-fugitive'
 
 " AUTO-COMPLETION "
-Plug 'https://github.com/hrsh7th/nvim-compe.git'
 Plug 'jiangmiao/auto-pairs'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'roxma/nvim-yarp'
-Plug 'roxma/vim-hug-neovim-rpc'
+Plug 'hrsh7th/nvim-compe'
 
 " keymaps-remembering helper
 Plug 'folke/which-key.nvim'
@@ -44,11 +41,12 @@ Plug 'folke/which-key.nvim'
 " Tab control
 Plug 'https://github.com/romgrk/barbar.nvim.git'
 
+"----------- Web Development -------------"
+Plug 'mattn/emmet-vim'
+Plug 'jvanja/vim-bootstrap4-snippets'
 "---------- CUSTOMIZATION ---------------"
-
-" icons
-Plug 'kyazdani42/nvim-web-devicons' 
 Plug 'https://github.com/ryanoasis/vim-devicons'
+Plug 'kyazdani42/nvim-web-devicons'
 Plug 'https://github.com/adelarsq/vim-devicons-emoji'
 Plug 'edkolev/tmuxline.vim'
 

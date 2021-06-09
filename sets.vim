@@ -9,24 +9,35 @@ set noerrorbells
 set expandtab
 set noshowmode
 set smartindent
+filetype indent on
+set shiftwidth=4
+set autoindent
+set cindent
+set tabstop=10
 set incsearch
 set guifont=
 set nowrap
+set sidescroll=1
+syntax on 
 set encoding=UTF-8
 set smartcase
-set scrolloff=30
+set scrolloff=50
+set colorcolumn=80
 highlight EndOfBuffer ctermfg=black ctermbg=black
 highlight Comment ctermfg=Blue
+set background=dark
+set termguicolors
 
+" emme
+let g:user_emmet_leader_key='<C-i>'
+let g:user_emmet_install_global = 0
+autocmd FileType html,css EmmetInstall
+
+" For tmux navigator
+let g:tmux_navigator_save_on_switch = 2
 
 " For lsp completion
 set completeopt=menuone,noselect,noinsert
-let g:completion_matching_strategy_list = ['exact', 'substring', 'fuzzy']
 
-" For deoplete - Dark powered asynchronous completion framework for
-" neovim/Vim8, I guess
-let g:deoplete#enable_at_startup = 1
 
-set background=dark
-set termguicolors
 

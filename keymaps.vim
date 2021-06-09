@@ -1,17 +1,16 @@
 "-------------------------------------------------------------------------------
 " Plugins
 "-------------------------------------------------------------------------------
-
 " telescope 
 nnoremap <Leader>eu :lua require'telescope.builtin'.current_buffer_fuzzy_find{}<CR>
 nnoremap <Leader>.. :lua require'telescope.builtin'.oldfiles(require('telescope.themes').get_ivy({ winblend = 0 }))<CR>
+nnoremap <Leader>,, :lua require'telescope.builtin'.file_browser(require('telescope.themes').get_ivy({ winblend = 0 }))<CR>
 
-" compe
-inoremap <silent><expr> <C-Space> compe#complete()
-inoremap <silent><expr> <CR>      compe#confirm('<CR>')
-inoremap <silent><expr> <C-e>     compe#close('<C-e>')
-inoremap <silent><expr> <C-f>     compe#scroll({ 'delta': +4 })
-inoremap <silent><expr> <C-d>     compe#scroll({ 'delta': -4 })
+" completion
+inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+"imap <tab> <Plug>(completion_smart_tab)
+"imap <s-tab> <Plug>(completion_smart_s_tab)
 
 " trouble.nvim
 nnoremap <leader>xx <cmd>TroubleToggle<cr>
@@ -19,14 +18,22 @@ nnoremap <leader>xx <cmd>TroubleToggle<cr>
 " Delete word backwards
 nnoremap dw vb"_d
 
+" Better movement
+nnoremap <silent> <C-j> :normal 5j<CR>
+nnoremap <silent> <C-k> :normal 5k<CR>
+nnoremap <silent> <C-h> :normal 5h<CR>
+nnoremap <silent> <C-l> :normal 5l<CR>
 "-------------------------------------------------------------------------------
 " Tabs
 "-------------------------------------------------------------------------------
-" Open current directory
-nmap te :tabedit 
+nmap te :tabedit<CR>
 nmap <S-Tab> :tabprev<Return>
 nmap <Tab> :tabnext<Return>
-
+"-------------------------------------------------------------------------------
+" Buffers
+"-------------------------------------------------------------------------------
+nnoremap <Leader>h :bnext<CR> 
+nnoremap <Leader>dd :bd<CR>
 "-------------------------------------------------------------------------------
 " Windows
 "-------------------------------------------------------------------------------
@@ -38,4 +45,3 @@ nmap <C-w><left> <C-w><
 nmap <C-w><right> <C-w>>
 nmap <C-w><up> <C-w>+
 nmap <C-w><down> <C-w>-
-
