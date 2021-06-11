@@ -51,7 +51,6 @@ require'nvim-treesitter.configs'.setup {
 }
 EOF
 
-
 " Statusline indicator
-echo nvim_treesitter#statusline(90) 
 
+echo nvim_treesitter#statusline(90) 

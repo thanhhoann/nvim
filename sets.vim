@@ -28,7 +28,10 @@ highlight Comment ctermfg=Blue
 set background=dark
 set termguicolors
 
-" emme
+" For lsp completion
+set completeopt=menuone,noselect
+
+" emmet
 let g:user_emmet_leader_key='<C-i>'
 let g:user_emmet_install_global = 0
 autocmd FileType html,css EmmetInstall
@@ -36,8 +39,7 @@ autocmd FileType html,css EmmetInstall
 " For tmux navigator
 let g:tmux_navigator_save_on_switch = 2
 
-" For lsp completion
-set completeopt=menuone,noselect,noinsert
-
-
+" vim wiki
+let g:vimwiki_list = [{'path': '~/vimwiki/',
+                      \ 'syntax': 'markdown', 'ext': '.md'}]
 
