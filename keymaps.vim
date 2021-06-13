@@ -11,6 +11,14 @@ nnoremap <Leader>,, :lua require'telescope.builtin'.file_browser(require('telesc
 imap <expr> <C-j>   vsnip#expandable()  ? '<Plug>(vsnip-expand)'         : '<C-j>'
 smap <expr> <C-j>   vsnip#expandable()  ? '<Plug>(vsnip-expand)'         : '<C-j>'
 
+" floatern
+nnoremap   <silent>   <F1>    :FloatermNew --autoclose=0 g++ % -o %< && ./%<<CR>
+
+
+" Scroll
+map <S-ScrollWheelUp> <C-U>
+map <ScrollWheelDown> <C-E>
+map <S-ScrollWheelDown> <C-D>
 
 " trouble.nvim
 nnoremap <leader>xx <cmd>TroubleToggle<cr>
@@ -19,8 +27,6 @@ nnoremap <leader>xx <cmd>TroubleToggle<cr>
 nnoremap dw vb"_d
 
 " Better movement
-nnoremap <silent> <C-j> :normal 5j<CR>
-nnoremap <silent> <C-k> :normal 5k<CR>
 nnoremap <silent> <C-h> :normal 5h<CR>
 nnoremap <silent> <C-l> :normal 5l<CR>
 "-------------------------------------------------------------------------------

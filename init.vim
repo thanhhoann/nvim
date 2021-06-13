@@ -16,6 +16,9 @@ Plug 'kyazdani42/nvim-tree.lua'
 " Comment
 Plug 'gennaro-tedesco/nvim-commaround'
 
+" smooth scrolling
+Plug 'psliwka/vim-smoothie'
+
 " Tree sitter
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-treesitter/playground'
@@ -26,6 +29,9 @@ Plug 'mbbill/undotree'
 
 " LSP diagnosing
 Plug 'folke/trouble.nvim'
+
+" floating terminal
+Plug 'voldikss/vim-floaterm'
 
 " LSP "
 Plug 'neovim/nvim-lspconfig'
@@ -54,6 +60,8 @@ Plug 'https://github.com/rafamadriz/friendly-snippets.git'
 Plug 'hrsh7th/vim-vsnip'
 Plug 'hrsh7th/vim-vsnip-integ'
 Plug 'turbio/bracey.vim', {'do': 'npm install --prefix server'}
+Plug 'sbdchd/neoformat'
+
 "---------- CUSTOMIZATION ---------------"
 Plug 'https://github.com/ryanoasis/vim-devicons'
 Plug 'kyazdani42/nvim-web-devicons'
