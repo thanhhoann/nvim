@@ -28,29 +28,13 @@ highlight Comment ctermfg=Blue
 set background=dark
 set termguicolors
 
-" to run prettier format on every js files on save
-autocmd BufWritePre,TextChanged,InsertLeave *.js Neoformat
-autocmd FileType javascript setlocal formatprg=prettier\ --single-quote\ --trailing-comma\ es5
+
 " Use formatprg when available
 let g:neoformat_try_formatprg = 1
 
 " For lsp completion
 set completeopt=menuone,noselect
 
-" emmet
-let g:user_emmet_leader_key='<C-i>'
-let g:user_emmet_install_global = 0
-autocmd FileType html,css EmmetInstall
-
-" For tmux navigator
-let g:tmux_navigator_save_on_switch = 2
-
-" vim wiki
-let g:vimwiki_list = [{'path': '~/vimwiki/',
-                      \ 'syntax': 'markdown', 'ext': '.md'}]
-
-" asynctas
-let g:asyncrun_open = 6
-let g:asynctasks_term_pos = 'external'
+hi FloatermBorder guibg=orange guifg=cyan
 
 
