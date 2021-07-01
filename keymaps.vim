@@ -9,10 +9,21 @@ nnoremap <Leader>,, :lua require'telescope.builtin'.file_browser(require('telesc
 "  ---- VSNIP --------------------------
 
 " floatern
-nnoremap   <Leader>cp   :FloatermNew --wintype=vsplit --width=0.4 --autoclose=0  gcc % -o %< && ./%<<CR>
+nnoremap   <F1>  :w <bar> :FloatermNew --wintype=vsplit --width=0.4 --autoclose=0  node %<CR>
 nnoremap   <Leader>cpp   :FloatermNew --wintype=vsplit --width=0.4 --autoclose=0  g++ % -o %< && ./%<<CR>
 nnoremap   <Leader>js   :FloatermNew --wintype=vsplit --width=0.4 --autoclose=0 node  % -o %< <<CR>
 nnoremap   <Leader>th :FloatermNew --autoclose=0 --width=0.9 --height=0.9<CR>
+
+" prettier format
+command! -nargs=0  Prettier :CocCommand prettier.formatFile
+
+" word motion
+let g:wordmotion_nomap = 1
+nmap w          <Plug>WordMotion_w
+nmap b          <Plug>WordMotion_b
+nmap gE         <Plug>WordMotion_gE
+omap aW         <Plug>WordMotion_aW
+cmap <C-R><C-W> <Plug>WordMotion_<C-R><C-W>
 
 " trouble.nvim
 nnoremap <leader>xx <cmd>TroubleToggle<cr>
@@ -20,6 +31,9 @@ nnoremap <leader>xx <cmd>TroubleToggle<cr>
 " TS text object
 omap     <silent> m :<C-U>lua require('tsht').nodes()<CR>
 vnoremap <silent> m :lua require('tsht').nodes()<CR>
+
+" select all
+nnoremap <silent> <C-a> ggVG
 
 
 " Delete word backwards

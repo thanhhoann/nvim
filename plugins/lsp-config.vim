@@ -36,5 +36,8 @@ nvim_lsp.rust_analyzer.setup({
     }
 })
 
-EOF
+
  
+
+EOF
+

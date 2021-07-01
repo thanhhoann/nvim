@@ -23,6 +23,7 @@ Plug 'mfussenegger/nvim-ts-hint-textobject'
 
 " easymotion
 Plug 'https://github.com/easymotion/vim-easymotion.git'
+Plug 'https://github.com/chaoren/vim-wordmotion.git'
 
 " Undo tree
 Plug 'mbbill/undotree'
@@ -55,10 +56,11 @@ Plug 'folke/which-key.nvim'
 " Tab control
 Plug 'https://github.com/romgrk/barbar.nvim.git'
 
-"-----------keek Development -------------"
+"-----------Web Development -------------"
 Plug 'mattn/emmet-vim'
 Plug 'turbio/bracey.vim', {'do': 'npm install --prefix server'}
 Plug 'sbdchd/neoformat'
+Plug 'rafamadriz/friendly-snippets'
 
 "---------- CUSTOMIZATION ---------------"
 Plug 'https://github.com/ryanoasis/vim-devicons'

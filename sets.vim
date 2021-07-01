@@ -15,7 +15,6 @@ set autoindent
 set cindent
 set tabstop=10
 set incsearch
-set guifont=
 set nowrap
 set sidescroll=1
 syntax on 
@@ -28,6 +27,10 @@ highlight Comment ctermfg=Blue
 set background=dark
 set termguicolors
 
+if has('gui_running')
+    set guifont=FiraCode\ Nerd\ Font\ Mono
+endif
+
 
 " Use formatprg when available
 let g:neoformat_try_formatprg = 1
@@ -35,6 +38,5 @@ let g:neoformat_try_formatprg = 1
 " For lsp completion
 set completeopt=menuone,noselect
 
-hi FloatermBorder guibg=orange guifg=cyan
 
 
