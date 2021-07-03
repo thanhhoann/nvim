@@ -77,7 +77,7 @@ Plug 'pineapplegiant/spaceduck', { 'branch': 'main' }
 Plug 'marko-cerovac/material.nvim'
 Plug 'navarasu/onedark.nvim'
 Plug 'tiagovla/tokyodark.nvim'
-Plug 'tjdevries/colorbuddy.vim'
+Plug 'tjdevries/colorbuddy.nvim'
 Plug 'bkegley/gloombuddy'
 
 call plug#end()

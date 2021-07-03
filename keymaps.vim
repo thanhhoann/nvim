@@ -1,10 +1,10 @@
-"-------------------------------------------------------------------------------
-" Plugins
-"-------------------------------------------------------------------------------
+let mapleader = " "
+
 " telescope 
-nnoremap <Leader>eu :lua require'telescope.builtin'.current_buffer_fuzzy_find{}<CR>
-nnoremap <Leader>.. :lua require'telescope.builtin'.oldfiles(require('telescope.themes').get_ivy({ winblend = 0 }))<CR>
-nnoremap <Leader>,, :lua require'telescope.builtin'.file_browser(require('telescope.themes').get_ivy({ winblend = 0 }))<CR>
+nnoremap <Leader>' :lua require'telescope.builtin'.current_buffer_fuzzy_find{}<CR>
+nnoremap <Leader>, :lua require'telescope.builtin'.live_grep(require('telescope.themes').get_ivy({ winblend = 0 }))<CR>
+nnoremap <Leader>. :lua require'telescope.builtin'.oldfiles(require('telescope.themes').get_ivy({ winblend = 0 }))<CR>
+nnoremap <Leader>p :lua require'telescope.builtin'.file_browser(require('telescope.themes').get_ivy({ winblend = 0 }))<CR>
 "  -------------------------------------
 "  ---- VSNIP --------------------------
 
@@ -15,6 +15,10 @@ nnoremap   <Leader>th :FloatermNew --autoclose=0 --width=0.9 --height=0.9<CR>
 
 " prettier format
 command! -nargs=0  Prettier :CocCommand prettier.formatFile
+
+nmap <silent> <leader>e :NvimTreeToggle<CR>
+
+nmap <leader><C-s> :source %<CR>
 
 " Search for selected text, forwards or backwards.
 vnoremap <silent> * :<C-U>
@@ -49,8 +53,6 @@ nnoremap <silent> <C-a> ggVG
 
 " Delete word backwards
 nnoremap dw vb"_d
-
-imap <Leader><F1> <esc>A
 
 " Better movement
 nnoremap <silent> <C-j> :normal 5j<CR>
