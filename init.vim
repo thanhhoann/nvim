@@ -45,7 +45,7 @@ Plug 'kabouzeid/nvim-lspinstall'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
 
-"" AUTO-COMPLETION "
+" AUTO-COMPLETION "
 Plug 'jiangmiao/auto-pairs'
 " Plug 'hrsh7th/nvim-compe'
 " Plug 'tzachar/compe-tabnine', { 'do': './install.sh' }
@@ -77,6 +77,8 @@ Plug 'pineapplegiant/spaceduck', { 'branch': 'main' }
 Plug 'marko-cerovac/material.nvim'
 Plug 'navarasu/onedark.nvim'
 Plug 'tiagovla/tokyodark.nvim'
+Plug 'tjdevries/colorbuddy.vim'
+Plug 'bkegley/gloombuddy'
 
 call plug#end()
 

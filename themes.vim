@@ -5,8 +5,6 @@ if exists('+termguicolors')
       set termguicolors
     endif
 
-let g:tmuxline_theme = 'zenburn'
-
 
 " colorscheme config
 lua << EOF
@@ -18,16 +16,16 @@ lua << EOF
 --vim.g.material_contrast = true
 --vim.g.material_disable_background = false
 --vim.g.material_custom_colors = { black = "#000000", bg = "#0F111A" }
-vim.g.tokyodark_transparent_background = false
-vim.g.tokyodark_enable_italic_comment = true
-vim.g.tokyodark_enable_italic = true
-vim.g.tokyodark_color_gamma = "1.4"
-vim.cmd("colorscheme tokyodark")
+--vim.g.tokyodark_transparent_background = false
+--vim.g.tokyodark_enable_italic_comment = true
+--vim.g.tokyodark_enable_italic = true
+--vim.g.tokyodark_color_gamma = "1.4"
+--vim.cmd("colorscheme tokyodark")
 
 EOF
 
 " Onedark theme
 " dark, darker, cool, deep, warm, warmer
 " let g:onedark_style = 'deep'
-" colorscheme onedark
+ colorscheme gloombuddy
    

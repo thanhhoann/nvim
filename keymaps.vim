@@ -10,12 +10,23 @@ nnoremap <Leader>,, :lua require'telescope.builtin'.file_browser(require('telesc
 
 " floatern
 nnoremap   <F1>  :w <bar> :FloatermNew --wintype=vsplit --width=0.4 --autoclose=0  node %<CR>
-nnoremap   <Leader>cpp   :FloatermNew --wintype=vsplit --width=0.4 --autoclose=0  g++ % -o %< && ./%<<CR>
-nnoremap   <Leader>js   :FloatermNew --wintype=vsplit --width=0.4 --autoclose=0 node  % -o %< <<CR>
+nnoremap   <F2>  :w <bar> :FloatermNew --wintype=vsplit --width=0.4 --autoclose=0  g++ % -o %< && ./%<<CR>
 nnoremap   <Leader>th :FloatermNew --autoclose=0 --width=0.9 --height=0.9<CR>
 
 " prettier format
 command! -nargs=0  Prettier :CocCommand prettier.formatFile
+
+" Search for selected text, forwards or backwards.
+vnoremap <silent> * :<C-U>
+  \let old_reg=getreg('"')<Bar>let old_regtype=getregtype('"')<CR>
+  \gvy/<C-R><C-R>=substitute(
+  \escape(@", '/\.*$^~['), '\_s\+', '\\_s\\+', 'g')<CR><CR>
+  \gV:call setreg('"', old_reg, old_regtype)<CR>
+vnoremap <silent> # :<C-U>
+  \let old_reg=getreg('"')<Bar>let old_regtype=getregtype('"')<CR>
+  \gvy?<C-R><C-R>=substitute(
+  \escape(@", '?\.*$^~['), '\_s\+', '\\_s\\+', 'g')<CR><CR>
+  \gV:call setreg('"', old_reg, old_regtype)<CR>
 
 " word motion
 let g:wordmotion_nomap = 1
@@ -39,6 +50,8 @@ nnoremap <silent> <C-a> ggVG
 " Delete word backwards
 nnoremap dw vb"_d
 
+imap <Leader><F1> <esc>A
+
 " Better movement
 nnoremap <silent> <C-j> :normal 5j<CR>
 nnoremap <silent> <C-k> :normal 5k<CR>
@@ -53,7 +66,7 @@ nmap <Tab> :tabnext<Return>
 "-------------------------------------------------------------------------------
 " Buffers
 "-------------------------------------------------------------------------------
-nnoremap <Leader>h :bnext<CR> 
+nnoremap <Leader>tt :bnext<CR> 
 nnoremap <Leader>dd :bd<CR>
 "-------------------------------------------------------------------------------
 " Windows
@@ -66,3 +79,8 @@ nmap <C-w><left> <C-w><
 nmap <C-w><right> <C-w>>
 nmap <C-w><up> <C-w>+
 nmap <C-w><down> <C-w>-
+" Move window
+map <leader>h <C-w>h
+map <leader>k <C-w>k
+map <leader>j <C-w>j
+map <leader>s <C-w>l
