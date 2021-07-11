@@ -10,14 +10,15 @@ local colors = {
   bg = '#202328',
   fg = '#bbc2cf',
   yellow = '#ECBE7B',
-  cyan = '#008080',
+  cyan = '#00FFFF',
   darkblue = '#081633',
   green = '#98be65',
   orange = '#FF8800',
   violet = '#a9a1e1',
   magenta = '#c678dd',
   blue = '#51afef',
-  red = '#ec5f67'
+  red = '#ec5f67',
+  white = '#FFFAFA'
 }
 
 local conditions = {
@@ -76,9 +77,9 @@ local function ins_right(component)
 end
 
 ins_left {
-  function() return '▊' end,
+  function() return ' ' end,
   color = {fg = colors.blue}, -- Sets highlighting of component
-  left_padding = 0 -- We don't need space before this
+  left_padding = 0.3 -- We don't need space before this
 }
 
 ins_left {
@@ -86,8 +87,8 @@ ins_left {
   function()
     -- auto change color according to neovims mode
     local mode_color = {
-      n = colors.red,
-      i = colors.green,
+      n = colors.white,
+      i = colors.cyan,
       v = colors.blue,
       [''] = colors.blue,
       V = colors.blue,
@@ -110,7 +111,7 @@ ins_left {
     vim.api.nvim_command(
         'hi! LualineMode guifg=' .. mode_color[vim.fn.mode()] .. " guibg=" ..
             colors.bg)
-    return ''
+    return ''
   end,
   color = "LualineMode",
   left_padding = 0
@@ -128,7 +129,7 @@ ins_left {
         size = size / 1024
         i = i + 1
       end
-      return string.format('%.1f%s', size, sufixes[i])
+      return string.format('[%.1f%s]', size, sufixes[i])
     end
     local file = vim.fn.expand('%:p')
     if string.len(file) == 0 then return '' end
@@ -177,7 +178,7 @@ ins_left {
     end
     return msg
   end,
-  icon = ' LSP:',
+  icon = 'nah nah',
   color = {fg = '#ffffff', gui = 'bold'}
 }
 
@@ -214,9 +215,9 @@ ins_right {
 }
 
 ins_right {
-  function() return '▊' end,
+  function() return '    ' end,
   color = {fg = colors.blue},
-  right_padding = 0
+  right_padding = 1
 }
 
 -- Now don't forget to initialize lualine

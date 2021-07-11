@@ -4,6 +4,19 @@ local ts_utils = require 'nvim-treesitter.ts_utils'
 
 require'nvim-treesitter.configs'.setup {
   ensure_installed = "maintained", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
+   context_commentstring = {
+    enable = true,
+     config = {
+      css = '// %s',
+      javascript = {
+        __default = '// %s',
+        jsx_element = '{/* %s */}',
+        jsx_fragment = '{/* %s */}',
+        jsx_attribute = '// %s',
+        comment = '// %s'
+      },
+    },
+  },
 
   highlight = {
     enable = true,              -- false will disable the whole extension

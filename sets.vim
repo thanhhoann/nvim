@@ -4,7 +4,9 @@ set nocompatible
 set noswapfile
 set nobackup
 
-set relativenumber
+set formatoptions-=cro
+
+set nu
 set hidden
 
 set noerrorbells
@@ -33,7 +35,6 @@ set nohlsearch
 set nowrap
 set nofoldenable
 set nomodeline
-set confirm
 
 syntax on 
 set encoding=UTF-8
@@ -42,18 +43,8 @@ set scrolloff=50
 
 " set cursorline  color in visual mode
 set cursorline
-highlight Visual cterm=NONE ctermbg=236 ctermfg=NONE guibg=Grey40
-highlight LineNr cterm=none ctermfg=240 guifg=#2b506e guibg=#000000
-augroup BgHighlight
-  autocmd!
-  autocmd WinEnter * set cul
-  autocmd WinLeave * set nocul
-augroup END
-if &term =~ "screen"
-  autocmd BufEnter * if bufname("") !~ "^?[A-Za-z0-9?]*://" | silent! exe '!echo -n "\ek[`hostname`:`basename $PWD`/`basename %`]\e\\"' | endif
-  autocmd VimLeave * silent!  exe '!echo -n "\ek[`hostname`:`basename $PWD`]\e\\"'
-endif
 
+let g:dashboard_default_executive ='telescope'
 
 " Use formatprg when available
 let g:neoformat_try_formatprg = 1
@@ -64,12 +55,14 @@ set completeopt=menuone,noselect
 " for background
 highlight EndOfBuffer ctermfg=black ctermbg=black
 highlight Comment ctermfg=Blue
-set background=dark
+set background=light
 set termguicolors
 
 if has('gui_running')
     set guifont=FiraCode\ Nerd\ Font\ Mono
 endif
+
+autocmd FileType lua setlocal commentstring=#\ %s
 
 
 
