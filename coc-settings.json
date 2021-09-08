@@ -1,4 +1,6 @@
 {
-    "javascript.suggestionActions.enabled": false,
-    "typescript.suggestionActions.enabled": false
+   "javascript.suggestionActions.enabled": false,
+   "suggest.floatEnable": false,
+   "signature.target": "echo",
+   "hover.target": "echo",
 }

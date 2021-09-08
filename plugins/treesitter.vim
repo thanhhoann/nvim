@@ -3,7 +3,20 @@ lua <<EOF
 local ts_utils = require 'nvim-treesitter.ts_utils'
 
 require'nvim-treesitter.configs'.setup {
+  textsubjects = {
+        enable = true,
+        keymaps = {
+            ['.'] = 'textsubjects-smart',
+            [';'] = 'textsubjects-container-outer',
+        }
+  },
   ensure_installed = "maintained", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
+  context_commentstring = {
+    enable = true
+  },
+  autotag = {
+    enable = true,
+  },
    context_commentstring = {
     enable = true,
      config = {
@@ -41,9 +54,8 @@ require'nvim-treesitter.configs'.setup {
     enable = true
   },
   refactor = {
-
-    highlight_definitions = { enable = true },
-      smart_rename = {
+    highlight_defiVitions = { enable = true },
+      sjart_rename = {
       enable = true,
       keymaps = {
         smart_rename = "grr",

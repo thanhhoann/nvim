@@ -4,129 +4,140 @@
 
 call plug#begin('~/.vim/plugged')
 
-" For telescope "
+" Note taking
+Plug 'vimwiki/vimwiki'
+
+" Formatter
+Plug 'sbdchd/neoformat'
+
+" Colorschemes
+Plug 'tjdevries/colorbuddy.nvim' " goes with gloombuddy.nvim
+Plug 'bkegley/gloombuddy'
+Plug 'winston0410/commented.nvim'
+
+" TypeScript
+Plug 'jose-elias-alvarez/nvim-lsp-ts-utils'
+Plug 'jose-elias-alvarez/null-ls.nvim'
+
+" todo-comment"
+Plug 'folke/todo-comments.nvim'
+
+" status line
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+let g:airline_theme='minimalist'
+
+" tmux line
+Plug 'edkolev/tmuxline.vim'
+
+"  telescope 
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzy-native.nvim'
 
-" debugging
-Plug 'mfussenegger/nvim-dap'
-Plug 'rcarriga/nvim-dap-ui'
-
-" File explorer
-Plug 'kyazdani42/nvim-tree.lua'
-Plug 'johann2357/nvim-smartbufs'
-
-" "Comment
-Plug 'gennaro-tedesco/nvim-commaround'
-
 " Tree sitter
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-treesitter/playground'
-Plug 'mfussenegger/nvim-ts-hint-textobject'
 
-" easymotion
-Plug 'https://github.com/chaoren/vim-wordmotion.git'
-Plug 'https://github.com/easymotion/vim-easymotion.git'
+" word motions 
+Plug 'phaazon/hop.nvim'
+Plug 'chaoren/vim-wordmotion'
+Plug 'ggandor/lightspeed.nvim'
 
-" Undo tree 
-Plug 'mbbill/undotree'
+"  file manager 
+Plug 'ms-jpq/chadtree', {'branch': 'chad', 'do': 'python3 -m chadtree deps'}
 
-" LSP diagnosing
+"  diagnosing
 Plug 'folke/trouble.nvim'
 
 " floating terminal
 Plug 'voldikss/vim-floaterm'
 
-" better movement
-Plug 'https://github.com/rhysd/clever-f.vim.git'
-Plug 'https://github.com/tpope/vim-commentary.git'
+" transparent background"
+Plug 'xiyaowong/nvim-transparent'
+let g:transparent_enabled = v:true
 
-" LSP "
+" scrolling "
+Plug 'karb94/neoscroll.nvim'
+
+" LSP 
 Plug 'neovim/nvim-lspconfig'
 Plug 'kabouzeid/nvim-lspinstall'
-Plug 'neovim/nvim-lspconfig'
-Plug 'glepnir/lspsaga.nvim'
+Plug 'nvim-lua/lsp-status.nvim'
 
 " coc
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
 
-" AUTO-COMPLETION "
+" auto-brackets
 Plug 'windwp/nvim-autopairs'
 
-" keymaps-remembering helper
-Plug 'folke/which-key.nvim'
-
-" Tab control
-Plug 'https://github.com/romgrk/barbar.nvim.git'
-
-"-----------Web Development -------------"
+" Web Development in general
 Plug 'mattn/emmet-vim'
-Plug 'gennaro-tedesco/nvim-jqx'
+Plug 'gennaro-tedesco/nvim-jqx' " .json format
 Plug 'p00f/nvim-ts-rainbow'
 Plug 'https://github.com/windwp/nvim-ts-autotag.git'
-Plug 'nikvdp/ejs-syntax'
 
-" react
-Plug 'ludovicchabant/vim-gutentags'
+" ReactJS
 Plug 'kristijanhusak/vim-js-file-import', {'do': 'npm install'}
 Plug 'pangloss/vim-javascript'
 Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
 Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
-Plug 'jparise/vim-graphql'
+Plug 'mrdotb/vim-tailwindcss'
 
-" scrolling
-Plug 'karb94/neoscroll.nvim'
+" indent guide
+Plug 'lukas-reineke/indent-blankline.nvim'
 
-"---------- CUSTOMIZATION ---------------"
+" icons 
 Plug 'https://github.com/ryanoasis/vim-devicons'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'https://github.com/adelarsq/vim-devicons-emoji'
-Plug 'edkolev/tmuxline.vim'
 
-" dashboard
-Plug 'glepnir/dashboard-nvim'
-"
-" colorscheme
-Plug 'hoob3rt/lualine.nvim'
-Plug 'pineapplegiant/spaceduck', { 'branch': 'main' }
-Plug 'marko-cerovac/material.nvim'
-Plug 'navarasu/onedark.nvim'
-Plug 'tiagovla/tokyodark.nvim'
-Plug 'tjdevries/colorbuddy.nvim'
-Plug 'bkegley/gloombuddy'
-Plug 'ray-x/aurora'
-Plug 'eddyekofo94/gruvbox-flat.nvim'
-Plug 'sainnhe/gruvbox-material'
+ Plug 'gko/vim-coloresque'
+ Plug 'tamton-aquib/staline.nvim'
+
+" old colorscheme
+" Plug 'bluz71/vim-moonfly-colors'
+" Plug 'folke/tokyonight.nvim'
+" Plug 'chrisbra/Colorizer'
+" Plug 'thanhhoann/vim-nightfly-guicolors'
 Plug 'yashguptaz/calvera-dark.nvim'
 
 call plug#end()
+
+
+
 
 
 "-------------------------------------------"
 "----------- LOAD FILES --------------------"
 "-------------------------------------------"
 
-lua require('init')
 
-
-source $HOME/.config/nvim/plugins/nvim-tree.vim
-source $HOME/.config/nvim/plugins/lsp-install.vim
+" source $HOME/.config/nvim/plugins/lsp-install.vim
 source $HOME/.config/nvim/plugins/lsp-config.vim
-source $HOME/.config/nvim/plugins/dashboard.vim
+" source $HOME/.config/nvim/plugins/dashboard.vim
 source $HOME/.config/nvim/plugins/coc.vim
 source $HOME/.config/nvim/plugins/treesitter.vim
 source $HOME/.config/nvim/plugins/autopairs.vim
+source $HOME/.config/nvim/plugins/telescope.vim
 source $HOME/.config/nvim/plugins/neoscroll.vim
-source $HOME/.config/nvim/plugins/lsp-saga.vim
-source $HOME/.config/nvim/plugins/lualine.vim
+" source $HOME/.config/nvim/plugins/lualine.vim
 source $HOME/.config/nvim/plugins/trouble.vim
 
 source $HOME/.config/nvim/keymaps.vim
+source $HOME/.config/nvim/plugin-keymaps.vim
 source $HOME/.config/nvim/themes.vim
 source $HOME/.config/nvim/sets.vim
+
+
+lua << EOF
+ require('init')
+ require('staline').setup{}
+ require('commented').setup()
+ require("todo-comments").setup {}
+EOF
 
 

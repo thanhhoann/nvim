@@ -178,7 +178,7 @@ ins_left {
     end
     return msg
   end,
-  icon = 'nah nah',
+  icon = 'oh shit',
   color = {fg = '#ffffff', gui = 'bold'}
 }
 
