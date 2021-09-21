@@ -1,6 +1,7 @@
 {
-   "javascript.suggestionActions.enabled": false,
-   "suggest.floatEnable": false,
-   "signature.target": "echo",
-   "hover.target": "echo",
+  "javascript.suggestionActions.enabled": false,
+  "suggest.floatEnable": false,
+  "signature.target": "echo",
+  "hover.target": "echo",
+  "java.format.settings.url": "/Users/thanhhoan77/.config/coc/extensions/node_modules/redhat.java/eclipse-formatter.xml"
 }

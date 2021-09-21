@@ -4,11 +4,19 @@
 
 call plug#begin('~/.vim/plugged')
 
-" Note taking
-Plug 'vimwiki/vimwiki'
+" Yank highlighter
+Plug 'machakann/vim-highlightedyank'
 
 " Formatter
 Plug 'sbdchd/neoformat'
+
+Plug 'google/vim-maktaba'
+Plug 'google/vim-codefmt'
+Plug 'google/vim-glaive'
+Plug 'sbdchd/neoformat'
+
+" Note taking
+Plug 'vimwiki/vimwiki'
 
 " Colorschemes
 Plug 'tjdevries/colorbuddy.nvim' " goes with gloombuddy.nvim
@@ -23,9 +31,9 @@ Plug 'jose-elias-alvarez/null-ls.nvim'
 Plug 'folke/todo-comments.nvim'
 
 " status line
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-let g:airline_theme='minimalist'
+" Plug 'vim-airline/vim-airline'
+" Plug 'vim-airline/vim-airline-themes'
+" let g:airline_theme='minimalist'
 
 " tmux line
 Plug 'edkolev/tmuxline.vim'
@@ -96,7 +104,7 @@ Plug 'kyazdani42/nvim-web-devicons'
 Plug 'https://github.com/adelarsq/vim-devicons-emoji'
 
  Plug 'gko/vim-coloresque'
- Plug 'tamton-aquib/staline.nvim'
+ " Plug 'tamton-aquib/staline.nvim'
 
 " old colorscheme
 " Plug 'bluz71/vim-moonfly-colors'
@@ -125,6 +133,7 @@ source $HOME/.config/nvim/plugins/autopairs.vim
 source $HOME/.config/nvim/plugins/telescope.vim
 source $HOME/.config/nvim/plugins/neoscroll.vim
 " source $HOME/.config/nvim/plugins/lualine.vim
+source $HOME/.config/nvim/plugins/todo-comments.vim
 source $HOME/.config/nvim/plugins/trouble.vim
 
 source $HOME/.config/nvim/keymaps.vim
@@ -133,9 +142,10 @@ source $HOME/.config/nvim/themes.vim
 source $HOME/.config/nvim/sets.vim
 
 
+"require('staline').setup{}
+ 
 lua << EOF
  require('init')
- require('staline').setup{}
  require('commented').setup()
  require("todo-comments").setup {}
 EOF

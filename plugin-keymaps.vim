@@ -26,13 +26,20 @@ nnoremap <silent> <Leader>, :lua require'telescope.builtin'.live_grep(require('t
 nnoremap <silent> <Leader>. :lua require'telescope.builtin'.find_files(require('telescope.themes').get_ivy({ winblend = 0 }))<CR>
 nnoremap <silent> <Leader>p :lua require('telescope.builtin').oldfiles({layout_strategy='vertical',layout_config={width=0.5}})<CR>
 
-" floatern
-nnoremap   <silent> <F1>  :w <bar> :FloatermNew --wintype=vsplit --width=0.4 --autoclose=0  node %<CR>
-nnoremap   <silent> <F2>  :w <bar> :FloatermNew --wintype=vsplit --width=0.4 --autoclose=0  deno run %<CR>
+" Floaterm
+" Javascript
+nnoremap   <silent> <F1>  :w <bar> :FloatermNew --wintype=vsplit --width=0.4 --autoclose=0  node %<CR> 
+" TypeScript
+nnoremap   <silent> <F2>  :w <bar> :FloatermNew --wintype=vsplit --width=0.4 --autoclose=0  java %<CR>
+" Java
+nnoremap   <silent> <F3>  :w <bar> :FloatermNew --wintype=vsplit --width=0.4 --autoclose=0  deno run %<CR>
 nnoremap   <silent> <Leader>n :FloatermNew --autoclose=0 --width=0.99 --height=0.99<CR>
 
 " prettier format
 nmap <leader><leader> :CocCommand prettier.formatFile<CR>
+
+" Java format
+nmap <leader>j :Format<CR>
 
 " Nvim tree toggle
 nnoremap <silent><leader>e <cmd>CHADopen<cr>
