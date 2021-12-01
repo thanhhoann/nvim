@@ -4,8 +4,10 @@ let mapleader = " "
 " abbreviations
 ab sou source %
 ab plu PlugInstall
-ab copy %w !pbcopy<CR>
+ab cp %w !pbcopy<CR>
 
+" Format file Python "
+nmap <F5> autopep8 --in-place --aggressive --aggressive %
 " kepmaps in normal mode
 nmap 1 ct
 

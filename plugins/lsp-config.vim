@@ -1,6 +1,10 @@
 lua << EOF
--- Compe setup
 
+require'lspinstall'.setup()
+local servers = require'lspinstall'.installed_servers()
+for _, server in pairs(servers) do
+  require'lspconfig'[server].setup{}
+end
 
 local t = function(str)
   return vim.api.nvim_replace_termcodes(str, true, true, true)

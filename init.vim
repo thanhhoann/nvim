@@ -2,30 +2,28 @@
 "----------- PLUGINS --------------------"
 "----------------------------------------"
 
+
 call plug#begin('~/.vim/plugged')
+" Format"
+" Plug 'vim-scripts/indentpython.vim'
 
-" Yank highlighter
-Plug 'machakann/vim-highlightedyank'
-
-" Formatter
-Plug 'sbdchd/neoformat'
-
-Plug 'google/vim-maktaba'
-Plug 'google/vim-codefmt'
-Plug 'google/vim-glaive'
-Plug 'sbdchd/neoformat'
-
-" Note taking
+" Note-taking
+Plug 'jbyuki/nabla.nvim' " Scientific mathematics rendering
 Plug 'vimwiki/vimwiki'
+Plug 'Pocco81/HighStr.nvim' "color text"
 
-" Colorschemes
-Plug 'tjdevries/colorbuddy.nvim' " goes with gloombuddy.nvim
+" Colorschemes 
 Plug 'bkegley/gloombuddy'
+Plug 'tjdevries/colorbuddy.nvim' " goes with gloombuddy.nvim
 Plug 'winston0410/commented.nvim'
+Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
+Plug 'itchyny/lightline.vim'
+Plug 'projekt0n/github-nvim-theme'
+Plug 'ray-x/aurora'
 
 " TypeScript
 Plug 'jose-elias-alvarez/nvim-lsp-ts-utils'
-Plug 'jose-elias-alvarez/null-ls.nvim'
+" Plug 'jose-elias-alvarez/null-ls.nvim'
 
 " todo-comment"
 Plug 'folke/todo-comments.nvim'
@@ -76,10 +74,10 @@ Plug 'nvim-lua/lsp-status.nvim'
 
 " coc
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
 
 " auto-brackets
-Plug 'windwp/nvim-autopairs'
+Plug 'steelsojka/pears.nvim'
+" Plug 'windwp/nvim-autopairs'
 
 " Web Development in general
 Plug 'mattn/emmet-vim'
@@ -88,11 +86,10 @@ Plug 'p00f/nvim-ts-rainbow'
 Plug 'https://github.com/windwp/nvim-ts-autotag.git'
 
 " ReactJS
-Plug 'kristijanhusak/vim-js-file-import', {'do': 'npm install'}
+" Plug 'kristijanhusak/vim-js-file-import', {'do': 'npm install'}
 Plug 'pangloss/vim-javascript'
 Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
-Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 Plug 'mrdotb/vim-tailwindcss'
 
 " indent guide
@@ -103,15 +100,15 @@ Plug 'https://github.com/ryanoasis/vim-devicons'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'https://github.com/adelarsq/vim-devicons-emoji'
 
- Plug 'gko/vim-coloresque'
- " Plug 'tamton-aquib/staline.nvim'
+Plug 'gko/vim-coloresque'
+Plug 'tamton-aquib/staline.nvim'
 
 " old colorscheme
 " Plug 'bluz71/vim-moonfly-colors'
 " Plug 'folke/tokyonight.nvim'
 " Plug 'chrisbra/Colorizer'
 " Plug 'thanhhoann/vim-nightfly-guicolors'
-Plug 'yashguptaz/calvera-dark.nvim'
+" Plug 'yashguptaz/calvera-dark.nvim'
 
 call plug#end()
 
@@ -126,10 +123,10 @@ call plug#end()
 
 " source $HOME/.config/nvim/plugins/lsp-install.vim
 source $HOME/.config/nvim/plugins/lsp-config.vim
-" source $HOME/.config/nvim/plugins/dashboard.vim
+source $HOME/.config/nvim/plugins/dashboard.vim
 source $HOME/.config/nvim/plugins/coc.vim
 source $HOME/.config/nvim/plugins/treesitter.vim
-source $HOME/.config/nvim/plugins/autopairs.vim
+" source $HOME/.config/nvim/plugins/autopairs.vim
 source $HOME/.config/nvim/plugins/telescope.vim
 source $HOME/.config/nvim/plugins/neoscroll.vim
 " source $HOME/.config/nvim/plugins/lualine.vim
@@ -141,6 +138,8 @@ source $HOME/.config/nvim/plugin-keymaps.vim
 source $HOME/.config/nvim/themes.vim
 source $HOME/.config/nvim/sets.vim
 
+" let g:vimwiki_list = [{'path': '~/vimwiki/',
+                      " \ 'syntax': 'markdown', 'ext': '.md'}]
 
 "require('staline').setup{}
  
@@ -148,6 +147,7 @@ lua << EOF
  require('init')
  require('commented').setup()
  require("todo-comments").setup {}
+ require ("pears").setup()
 EOF
 
 

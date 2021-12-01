@@ -17,6 +17,9 @@
 " Example config in VimScript
 let g:tokyonight_style = "night"
 let g:tokyonight_italic_functions = 1
+let g:tokyonight_italic_variables = 1
+let g:tokyonight_italic_keywords = 1
+let g:tokyonight_transparent_sidebar = 1
 let g:tokyonight_sidebars = [ "qf", "vista_kind", "terminal", "packer" ]
 
 " Load the colorscheme
@@ -41,7 +44,10 @@ require("transparent").setup({
 })
 EOF
 
+let g:lightline = {'colorscheme': 'tokyonight'}
 
+let g:github_function_style = "italic"
+let g:github_sidebars = ["qf", "vista_kind", "terminal", "packer"]
 
+colorscheme tokyonight
 
-colorscheme gloombuddy

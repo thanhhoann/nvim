@@ -9,7 +9,3 @@ let g:dashboard_custom_shortcut={
 \ }
 
 
-
-
-let g:dashboard_custom_header =<< trim END
-END

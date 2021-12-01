@@ -3,5 +3,8 @@
   "suggest.floatEnable": false,
   "signature.target": "echo",
   "hover.target": "echo",
-  "java.format.settings.url": "/Users/thanhhoan77/.config/coc/extensions/node_modules/redhat.java/eclipse-formatter.xml"
+  "java.format.settings.url": "/Users/thanhhoan77/.config/coc/extensions/node_modules/redhat.java/eclipse-formatter.xml",
+  "coc.preferences.formatOnSaveFiletypes": ["python", "json"],
+  "python.formatting.provider": "autopep8",
+  "python.formatting.autopep8Path": "/Library/Frameworks/Python.framework/Versions/3.10/bin/autopep8"
 }

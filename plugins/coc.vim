@@ -126,4 +126,9 @@ command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organize
 " navigation compleopt
 imap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 imap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+if exists('*complete_info')
+  inoremap <silent><expr> <cr> complete_info(['selected'])['selected'] != -1 ? "\<C-y>" : "\<C-g>u\<CR>"
+endif
+
+
 

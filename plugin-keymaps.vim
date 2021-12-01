@@ -1,5 +1,6 @@
 
-nmap <Leader>r <Plug>RestNvim 
+" nabla.nim "
+nnoremap <F4> :lua require("nabla").replace_current()<CR>
 
 " Hop.nvim"
 " nmap <C-w> <cmd>HopWord<cr>
@@ -27,12 +28,20 @@ nnoremap <silent> <Leader>. :lua require'telescope.builtin'.find_files(require('
 nnoremap <silent> <Leader>p :lua require('telescope.builtin').oldfiles({layout_strategy='vertical',layout_config={width=0.5}})<CR>
 
 " Floaterm
+
 " Javascript
-nnoremap   <silent> <F1>  :w <bar> :FloatermNew --wintype=vsplit --width=0.4 --autoclose=0  node %<CR> 
-" TypeScript
-nnoremap   <silent> <F2>  :w <bar> :FloatermNew --wintype=vsplit --width=0.4 --autoclose=0  java %<CR>
+nnoremap   <silent> <F1>  :w <bar> :FloatermNew --wintype=vsplit --width=0.6 --autoclose=0  node %<CR> 
+
 " Java
-nnoremap   <silent> <F3>  :w <bar> :FloatermNew --wintype=vsplit --width=0.4 --autoclose=0  deno run %<CR>
+nnoremap   <silent> <F2>  :w <bar> :FloatermNew --wintype=vsplit --width=0.6 --autoclose=0  java %<CR>
+
+" C++
+nnoremap   <silent> <F3>  :w <bar> :FloatermNew --wintype=vsplit --width=0.6 --autoclose=0  g++ % && ./a.out<CR>
+
+" Python
+nnoremap   <silent> <F4>  :w <bar> :FloatermNew --wintype=vsplit --width=0.6 --autoclose=0  python %<CR>
+
+" new terminal
 nnoremap   <silent> <Leader>n :FloatermNew --autoclose=0 --width=0.99 --height=0.99<CR>
 
 " prettier format
