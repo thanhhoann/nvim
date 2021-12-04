@@ -6,6 +6,7 @@
 call plug#begin('~/.vim/plugged')
 " Format"
 " Plug 'vim-scripts/indentpython.vim'
+Plug 'sbdchd/neoformat'
 
 " Note-taking
 Plug 'jbyuki/nabla.nvim' " Scientific mathematics rendering
@@ -72,11 +73,20 @@ Plug 'neovim/nvim-lspconfig'
 Plug 'kabouzeid/nvim-lspinstall'
 Plug 'nvim-lua/lsp-status.nvim'
 
+" Plug 'hrsh7th/cmp-nvim-lsp'
+" Plug 'hrsh7th/cmp-buffer'
+" Plug 'hrsh7th/cmp-path'
+" Plug 'hrsh7th/cmp-cmdline'
+" Plug 'hrsh7th/nvim-cmp'
+
+" Plug 'hrsh7th/cmp-vsnip'
+" Plug 'hrsh7th/vim-vsnip'
+
 " coc
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " auto-brackets
-Plug 'steelsojka/pears.nvim'
+" Plug 'steelsojka/pears.nvim'
 " Plug 'windwp/nvim-autopairs'
 
 " Web Development in general
@@ -122,14 +132,15 @@ call plug#end()
 
 
 " source $HOME/.config/nvim/plugins/lsp-install.vim
+source $HOME/.config/nvim/plugins/coc.vim
+" source $HOME/.config/nvim/plugins/autopairs.vim
+" source $HOME/.config/nvim/plugins/lualine.vim
+" source $HOME/.config/nvim/plugins/nvim-cmp.vim
 source $HOME/.config/nvim/plugins/lsp-config.vim
 source $HOME/.config/nvim/plugins/dashboard.vim
-source $HOME/.config/nvim/plugins/coc.vim
 source $HOME/.config/nvim/plugins/treesitter.vim
-" source $HOME/.config/nvim/plugins/autopairs.vim
 source $HOME/.config/nvim/plugins/telescope.vim
 source $HOME/.config/nvim/plugins/neoscroll.vim
-" source $HOME/.config/nvim/plugins/lualine.vim
 source $HOME/.config/nvim/plugins/todo-comments.vim
 source $HOME/.config/nvim/plugins/trouble.vim
 
@@ -147,7 +158,6 @@ lua << EOF
  require('init')
  require('commented').setup()
  require("todo-comments").setup {}
- require ("pears").setup()
 EOF
 
 

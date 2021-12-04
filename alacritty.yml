@@ -1,0 +1,109 @@
+window:
+  dimensions:
+    columns: 135
+    lines: 43
+  padding:
+    x: 10
+    y: 10 
+  dynamic_padding: false
+  decorations: Buttonless
+  startup_mode: Windowed
+
+scrolling:
+  history: 2000
+  multiplier: 3
+
+faux_multiplier: 3
+
+cursor:
+  style:
+    shape: Beam
+    blinking: Always
+    blink_interval: 500
+    unfocused_hollow: true
+    thickness: 0.15
+
+font:
+  normal:
+    family: DaddyTimeMono Nerd Font Mono
+    style: Book
+  bold:
+    family: FantasqueSansMono Nerd Font Mono
+    style: Bold
+  italic:
+    family: FantasqueSansMono Nerd Font Mono
+    style: Italic
+  size: 18
+  offset:
+    x: 0
+    y: 0 
+  glyph_offset:
+    x: 0
+    y: 0
+
+custom_cursor_colors: true
+
+# TokyoNight Alacritty Colors
+# colors:
+  # primary:
+    # background: '0x1a1b26'
+    # foreground: '0xc0caf5'
+  # normal:
+    # black:   '0x15161E'
+    # red:     '0xf7768e'
+    # green:   '0x9ece6a'
+    # yellow:  '0xe0af68'
+    # blue:    '0x7aa2f7'
+    # magenta: '0xbb9af7'
+    # cyan:    '0x7dcfff'
+    # white:   '0xa9b1d6'
+  # # Bright colors
+  # bright:
+    # black:   '0x414868'
+    # red:     '0xf7768e'
+    # green:   '0x9ece6a'
+    # yellow:  '0xe0af68'
+    # blue:    '0x7aa2f7'
+    # magenta: '0xbb9af7'
+    # cyan:    '0x7dcfff'
+    # white:   '0xc0caf5'
+
+  # indexed_colors:
+    # - { index: 16, color: '0xff9e64' }
+    # - { index: 17, color: '0xdb4b4b' }
+# Colors (Aura Theme)
+colors:
+  # Default colors
+  primary:
+    background: '#15141b'
+    foreground: '#edecee'
+
+  cursor:
+    cursor: '#a277ff'
+
+  # Normal colors
+  normal:
+    black:   '#110f18'
+    red:     '#ff6767'
+    green:   '#61ffca'
+    yellow:  '#ffca85'
+    blue:    '#a277ff'
+    magenta: '#a277ff'
+    cyan:    '#61ffca'
+    white:   '#edecee'
+
+  # Bright colors
+  bright:
+    black:   '#4d4d4d'
+    red:     '#ff6767'
+    green:   '#61ffca'
+    yellow:  '#ffca85'
+    blue:    '#a277ff'
+    magenta: '#a277ff'
+    cyan:    '#61ffca'
+    white:   '#edecee'
+
+background_opacity: 0.9
+
+live_config_reload: true
+

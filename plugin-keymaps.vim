@@ -28,18 +28,18 @@ nnoremap <silent> <Leader>. :lua require'telescope.builtin'.find_files(require('
 nnoremap <silent> <Leader>p :lua require('telescope.builtin').oldfiles({layout_strategy='vertical',layout_config={width=0.5}})<CR>
 
 " Floaterm
-
-" Javascript
-nnoremap   <silent> <F1>  :w <bar> :FloatermNew --wintype=vsplit --width=0.6 --autoclose=0  node %<CR> 
-
-" Java
-nnoremap   <silent> <F2>  :w <bar> :FloatermNew --wintype=vsplit --width=0.6 --autoclose=0  java %<CR>
-
 " C++
-nnoremap   <silent> <F3>  :w <bar> :FloatermNew --wintype=vsplit --width=0.6 --autoclose=0  g++ % && ./a.out<CR>
+nnoremap   <silent> <F1>  :w <bar> :FloatermNew --wintype=vsplit --width=0.9 --autoclose=0  g++ % && ./a.out<CR>
 
 " Python
-nnoremap   <silent> <F4>  :w <bar> :FloatermNew --wintype=vsplit --width=0.6 --autoclose=0  python %<CR>
+nnoremap   <silent> <F2>  :w <bar> :FloatermNew --wintype=vsplit --width=0.6 --autoclose=0  python %<CR>
+
+" Javascript
+nnoremap   <silent> <F3>  :w <bar> :FloatermNew --wintype=vsplit --width=0.6 --autoclose=0  node %<CR> 
+
+" Java
+nnoremap   <silent> <F4>  :w <bar> :FloatermNew --wintype=vsplit --width=0.6 --autoclose=0  java %<CR>
+
 
 " new terminal
 nnoremap   <silent> <Leader>n :FloatermNew --autoclose=0 --width=0.99 --height=0.99<CR>
