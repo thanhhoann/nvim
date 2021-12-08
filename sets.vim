@@ -26,16 +26,16 @@ set formatoptions-=cro
 set nu
 set hidden
 
-set cursorline
+" set cursorline
 
 set noerrorbells
 
 set smartindent
 set smarttab
 set expandtab "converts to spaces"
-set shiftwidth=6 "4 spaces"
+set shiftwidth=5 "4 spaces"
 set autoindent "new lines inherit the indentation of previous lines"
-set tabstop=6
+set tabstop=5
 
 set noshowmode
 set autowrite
@@ -52,7 +52,7 @@ set ignorecase "igore case when searching"
 
 set incsearch
 set nohlsearch
-" set nowrap
+set nowrap
 set nofoldenable
 " set nomodeline
 
@@ -98,4 +98,5 @@ highlight Comment ctermfg=Green
 set termguicolors
 
 autocmd FileType lua setlocal commentstring=#\ %s
+
 

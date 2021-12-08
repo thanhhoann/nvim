@@ -1,10 +1,11 @@
 {
-  "javascript.suggestionActions.enabled": false,
-  "suggest.floatEnable": false,
+  "javascript.suggestionActions.enabled": true,
   "signature.target": "echo",
   "hover.target": "echo",
   "java.format.settings.url": "/Users/thanhhoan77/.config/coc/extensions/node_modules/redhat.java/eclipse-formatter.xml",
   "coc.preferences.formatOnSaveFiletypes": ["python", "json"],
   "python.formatting.provider": "autopep8",
-  "python.formatting.autopep8Path": "/Library/Frameworks/Python.framework/Versions/3.10/bin/autopep8"
+  "python.formatting.autopep8Path": "/Library/Frameworks/Python.framework/Versions/3.10/bin/autopep8",
+  "coc.preferences.extensionUpdateCheck": "daily",
+  "clangd.path": "~/.config/coc/extensions/coc-clangd-data/install/13.0.0/clangd_13.0.0/bin/clangd"
 }

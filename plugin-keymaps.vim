@@ -23,13 +23,13 @@ nmap <Leader>w <Plug>(easymotion-overwin-w)
 
 " telescope 
 nnoremap <silent> <Leader>' :lua require'telescope.builtin'.current_buffer_fuzzy_find{}<CR>
-nnoremap <silent> <Leader>, :lua require'telescope.builtin'.live_grep(require('telescope.themes').get_ivy({ winblend = 0 }))<CR>
+nnoremap <silent> <Leader>, :lua require'telescope.builtin'.live_grep(require('telescope.themes').get_ivy({ winblend = 10 }))<CR>
 nnoremap <silent> <Leader>. :lua require'telescope.builtin'.find_files(require('telescope.themes').get_ivy({ winblend = 0 }))<CR>
 nnoremap <silent> <Leader>p :lua require('telescope.builtin').oldfiles({layout_strategy='vertical',layout_config={width=0.5}})<CR>
 
 " Floaterm
 " C++
-nnoremap   <silent> <F1>  :w <bar> :FloatermNew --wintype=vsplit --width=0.9 --autoclose=0  g++ % && ./a.out<CR>
+nnoremap   <silent> <F1>  :w <bar> :FloatermNew --wintype=vsplit --width=0.5 --autoclose=0  g++ --std=c++17 -Wall -Wextra -Wshadow -fsanitize=undefined % && ./a.out<CR>
 
 " Python
 nnoremap   <silent> <F2>  :w <bar> :FloatermNew --wintype=vsplit --width=0.6 --autoclose=0  python %<CR>
@@ -63,19 +63,19 @@ nnoremap <leader>xx <cmd>TroubleToggle<cr>
 
 
 " TELESCOPE"
-highlight TelescopeSelection      guifg=#D79921 gui=bold " Selected item
-highlight TelescopeSelectionCaret guifg=#50fa7b          " Selection caret
-highlight TelescopeMultiSelection guifg=#928374          " Multisections
-highlight TelescopeNormal         guibg=#ffb86c           " Floating windows created by telescope
+" highlight TelescopeSelection      guifg=#D79921 gui=bold " Selected item
+" highlight TelescopeSelectionCaret guifg=#50fa7b          " Selection caret
+" highlight TelescopeMultiSelection guifg=#928374          " Multisections
+" highlight TelescopeNormal         guibg=#ffb86c           " Floating windows created by telescope
 
 " Border highlight groups
-highlight TelescopeBorder         guifg=#ffb86c
-highlight TelescopePromptBorder   guifg=#50fa7b
-highlight TelescopeResultsBorder  guifg=#50fa7b
-highlight TelescopePreviewBorder  guifg=#50fa7b
+" highlight TelescopeBorder         guifg=#ffb86c
+" highlight TelescopePromptBorder   guifg=#50fa7b
+" highlight TelescopeResultsBorder  guifg=#50fa7b
+" highlight TelescopePreviewBorder  guifg=#50fa7b
 
 " Highlight characters your input matches
-highlight TelescopeMatching       guifg=#ffb86c
+" highlight TelescopeMatching       guifg=#ffb86c
 
 " Color the prompt prefix
-highlight TelescopePromptPrefix   guifg=#50fa7b
+" highlight TelescopePromptPrefix   guifg=#50fa7b
