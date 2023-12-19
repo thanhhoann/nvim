@@ -1,6 +1,8 @@
-require('plugins.colors')
-require('plugins.telescope')
-require('plugins.treesitter')
-require('plugins.fugitive')
-require('plugins.lsp')
-require('plugins.harpoon')
+local plugin = 'plugins.'
+
+require(plugin .. 'telescope')
+require(plugin .. 'treesitter')
+require(plugin .. 'fugitive')
+require(plugin .. 'lsp')
+require(plugin .. 'harpoon')
+require(plugin .. 'oil')

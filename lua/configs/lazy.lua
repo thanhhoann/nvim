@@ -11,23 +11,15 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-require("lazy").setup({
+local COLOR_SCHEMES = {
     {
         "folke/tokyonight.nvim",
         lazy = false,    -- make sure we load this during startup if it is your main colorscheme
         priority = 1000, -- make sure to load this before all the other start plugins
-        config = function()
-            -- load the colorscheme here
-            vim.cmd([[colorscheme tokyonight]])
-        end,
     },
+}
 
-    {
-        'nvim-telescope/telescope.nvim',
-        tag = '0.1.5',
-        dependencies = { 'nvim-lua/plenary.nvim' }
-    },
-
+local LSP = {
     { "nvim-treesitter/nvim-treesitter",  build = ":TSUpdate" },
 
     { 'ThePrimeagen/harpoon' },
@@ -42,6 +34,16 @@ require("lazy").setup({
     { 'hrsh7th/cmp-nvim-lsp' },
     { 'hrsh7th/nvim-cmp' },
     { 'L3MON4D3/LuaSnip' },
+}
+
+local UTILS = {
+    { 'nvim-tree/nvim-web-devicons' },
+    {
+        'nvim-telescope/telescope.nvim',
+        tag = '0.1.5',
+        dependencies = { 'nvim-lua/plenary.nvim' }
+    },
+
 
     {
         "folke/which-key.nvim",
@@ -52,4 +54,34 @@ require("lazy").setup({
         end,
         opts = {}
     },
-}, opts)
+    {
+        'stevearc/oil.nvim',
+        opts = {},
+        -- Optional dependencies
+        dependencies = { "nvim-tree/nvim-web-devicons" },
+    },
+    {
+        'mrjones2014/legendary.nvim',
+        -- since legendary.nvim handles all your keymaps/commands,
+        -- its recommended to load legendary.nvim before other plugins
+        priority = 10000,
+        lazy = false,
+        -- sqlite is only needed if you want to use frecency sorting
+        -- dependencies = { 'kkharji/sqlite.lua' }
+    }
+}
+
+local EDITING_SUPPORT = {
+    {
+        'windwp/nvim-autopairs',
+        event = "InsertEnter",
+        opts = {}
+    },
+}
+
+require("lazy").setup({
+    COLOR_SCHEMES,
+    LSP,
+    UTILS,
+    EDITING_SUPPORT
+})

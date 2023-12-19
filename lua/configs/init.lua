@@ -1,3 +1,7 @@
-require('configs.lazy')
-require('configs.keymaps')
-require('configs.set')
+local config = 'configs.'
+
+require(config .. 'lazy')
+require(config .. 'keymap')
+require(config .. 'set')
+require(config .. 'colorscheme')
+
