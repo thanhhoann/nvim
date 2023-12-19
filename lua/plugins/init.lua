@@ -1,0 +1,6 @@
+require('plugins.colors')
+require('plugins.telescope')
+require('plugins.treesitter')
+require('plugins.fugitive')
+require('plugins.lsp')
+require('plugins.harpoon')
