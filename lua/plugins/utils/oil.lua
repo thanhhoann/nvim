@@ -84,11 +84,11 @@ require("oil").setup({
     float = {
         -- Padding around the floating window
         padding = 2,
-        max_width = 0,
-        max_height = 0,
+        max_width = 100,
+        max_height = 30,
         border = "rounded",
         win_options = {
-            winblend = 0,
+            winblend = 20,
         },
         -- This is the config that will be passed to nvim_open_win.
         -- Change values here to customize the layout
@@ -138,4 +138,4 @@ require("oil").setup({
 })
 
 
-vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
+vim.keymap.set("n", "-", "<CMD>Oil --float<CR>", { desc = "Open parent directory" })

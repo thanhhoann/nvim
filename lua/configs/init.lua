@@ -1,7 +1,6 @@
 local config = 'configs.'
 
 require(config .. 'lazy')
-require(config .. 'keymap')
-require(config .. 'set')
-require(config .. 'colorscheme')
-
+require(config .. 'sets')
+require(config .. 'functions')
+require(config .. 'keymaps')

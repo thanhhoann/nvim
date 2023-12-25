@@ -4,3 +4,5 @@ vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
 vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
 vim.keymap.set('n', '<leader>fo', builtin.oldfiles, {})
 vim.keymap.set('n', '<leader>/', builtin.current_buffer_fuzzy_find, {})
+
+require('telescope').load_extension('media_files')
