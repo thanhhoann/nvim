@@ -1,0 +1,11 @@
+{
+    "diagnostics.disable": [
+        "unused-local",
+        "redefined-local",
+        "unused-function",
+        "undefined-global"
+    ],
+    "diagnostics.globals": [
+        "lsp_attach"
+    ]
+}
