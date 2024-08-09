@@ -1,5 +1,3 @@
-# nvim/
-
 <a href="https://dotfyle.com/thanhhoann/nvim"><img src="https://dotfyle.com/thanhhoann/nvim/badges/plugins?style=for-the-badge" /></a>
 <a href="https://dotfyle.com/thanhhoann/nvim"><img src="https://dotfyle.com/thanhhoann/nvim/badges/leaderkey?style=for-the-badge" /></a>
 <a href="https://dotfyle.com/thanhhoann/nvim"><img src="https://dotfyle.com/thanhhoann/nvim/badges/plugin-manager?style=for-the-badge" /></a>
