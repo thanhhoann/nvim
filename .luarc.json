@@ -3,7 +3,8 @@
         "unused-local",
         "redefined-local",
         "unused-function",
-        "undefined-global"
+        "undefined-global",
+        "missing-fields"
     ],
     "diagnostics.globals": [
         "lsp_attach"

@@ -1,5 +1,4 @@
 return {
-  -- Notifications for Neovim
   {
     "folke/noice.nvim",
     opts = function(_, opts)

@@ -16,32 +16,6 @@ return {
       local cmp = require("cmp")
 
       opts.mapping = vim.tbl_extend("force", opts.mapping, {
-        -- ["<Tab>"] = cmp.mapping(function(fallback)
-        --   if cmp.visible() then
-        --     -- You could replace select_next_item() with confirm({ select = true }) to get VS Code autocompletion behavior
-        --     cmp.select_next_item()
-        --   elseif vim.snippet.active({ direction = 1 }) then
-        --     vim.schedule(function()
-        --       vim.snippet.jump(1)
-        --     end)
-        --   elseif has_words_before() then
-        --     cmp.complete()
-        --   else
-        --     fallback()
-        --   end
-        -- end, { "i", "s" }),
-        -- ["<S-Tab>"] = cmp.mapping(function(fallback)
-        --   if cmp.visible() then
-        --     cmp.select_prev_item()
-        --   elseif vim.snippet.active({ direction = -1 }) then
-        --     vim.schedule(function()
-        --       vim.snippet.jump(-1)
-        --     end)
-        --   else
-        --     fallback()
-        --   end
-        -- end, { "i", "s" }),
-
         -- copied from https://github.com/hrsh7th/nvim-cmp/wiki/Example-mappings#luasnip
         ["<CR>"] = cmp.mapping(function(fallback)
           if cmp.visible() then
@@ -77,6 +51,37 @@ return {
           end
         end, { "i", "s" }),
       })
+
+      opts.window = {
+        completion = {
+          border = {
+            { "󱐋", "WarningMsg" },
+            { "─", "Comment" },
+            { "╮", "Comment" },
+            { "│", "Comment" },
+            { "╯", "Comment" },
+            { "─", "Comment" },
+            { "╰", "Comment" },
+            { "│", "Comment" },
+          },
+          scrollbar = false,
+          winblend = 0,
+        },
+        documentation = {
+          border = {
+            { "󰙎", "DiagnosticHint" },
+            { "─", "Comment" },
+            { "╮", "Comment" },
+            { "│", "Comment" },
+            { "╯", "Comment" },
+            { "─", "Comment" },
+            { "╰", "Comment" },
+            { "│", "Comment" },
+          },
+          scrollbar = false,
+          winblend = 0,
+        },
+      }
     end,
   },
 
