@@ -8,6 +8,7 @@ require("config.core") -- Bootstrap lazy.nvim & LazyVim
 -- LazyVim autoloads in lua/config: autocmds, keymaps, options
 require("config.user_commands")
 require("config.functions")
+require("config.db")
 
 -- 󰘧 Plugins Configurations
 --  Important Plugins
@@ -17,6 +18,7 @@ require("plugins.config.luasnip")
 require("plugins.config.cmp")
 require("plugins.config.quick-fix")
 require("plugins.config.flash")
+require("plugins.config.dressing")
 -- require("plugins.config.none-ls")
 -- require("plugins.config.conform")
 

@@ -95,3 +95,8 @@ end)
 
 -- oil
 key("n", "-", "<CMD>Oil --float<CR>")
+
+-- inc-rename
+key("n", "<leader>r", function()
+  return ":IncRename " .. vim.fn.expand("<cword>")
+end, { expr = true })

@@ -4,7 +4,9 @@ return {
     opts = function(_, opts)
       local nls = require("null-ls").builtins
       opts.sources = { --override lazyvim's default sources
-        -- web dev-ing
+        nls.code_actions.refactoring,
+        nls.completion.luasnip,
+        -- typescript
         nls.formatting.biome.with({
           filetypes = {
             "javascript",
@@ -25,6 +27,14 @@ return {
             "--stdin-file-path=$FILENAME",
           },
         }),
+        -- sql
+        nls.diagnostics.sqlfluff.with({
+          extra_args = { "--dialect", "postgres" },
+        }),
+        nls.formatting.sqlfluff.with({
+          extra_args = { "--dialect", "postgres" },
+        }),
+        -- nls.formatting.pg_format,
         -- .lua
         nls.formatting.stylua,
         -- dotfiles
@@ -39,35 +49,15 @@ return {
 
   {
     "stevearc/conform.nvim",
-    opts = {
-      formatters = {
-        ["markdown-toc"] = {
-          condition = function(_, ctx)
-            for _, line in ipairs(vim.api.nvim_buf_get_lines(ctx.buf, 0, -1, false)) do
-              if line:find("<!%-%- toc %-%->") then
-                return true
-              end
-            end
-          end,
-        },
-        ["markdownlint-cli2"] = {
-          condition = function(_, ctx)
-            local diag = vim.tbl_filter(function(d)
-              return d.source == "markdownlint"
-            end, vim.diagnostic.get(ctx.buf))
-            return #diag > 0
-          end,
-        },
-      },
-      formatters_by_ft = {
-        ["markdown"] = { "prettier", "markdownlint-cli2", "markdown-toc" },
-        ["markdown.mdx"] = { "prettier", "markdownlint-cli2", "markdown-toc" },
-        lua = { "stylua" },
-        -- Conform will run multiple formatters sequentially
-        python = { "isort", "black" },
-        -- Use a sub-list to run only the first available formatter
-        typescriptreact = { "biome", "rustywind" },
-      },
-    },
+    optional = true,
+    -- opts = function(_, opts)
+    --   opts.formatters.sqlfluff = {
+    --     args = { "format", "--dialect=ansi", "-" },
+    --   }
+    --   for _, ft in ipairs(sql_ft) do
+    --     opts.formatters_by_ft[ft] = opts.formatters_by_ft[ft] or {}
+    --     table.insert(opts.formatters_by_ft[ft], "sqlfluff")
+    --   end
+    -- end,
   },
 }

@@ -90,5 +90,4 @@ vim.g.autoformat = false
 -- If no prettier config file is found, the formatter will not be used
 vim.g.lazyvim_prettier_needs_config = true
 
-
-
+vim.opt.laststatus = 3

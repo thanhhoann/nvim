@@ -68,17 +68,17 @@ return {
   {
     "rcarriga/nvim-notify",
     opts = {
-      timeout = 1000,
-      render = "compact",
-      max_height = function()
-        return math.floor(vim.o.lines * 0.75)
-      end,
-      max_width = function()
-        return math.floor(vim.o.columns * 0.25)
-      end,
-      on_open = function(win)
-        vim.api.nvim_win_set_config(win, { zindex = 100 })
-      end,
+      -- timeout = 1000,
+      -- render = "compact",
+      -- max_height = function()
+      --   return math.floor(vim.o.lines * 0.75)
+      -- end,
+      -- max_width = function()
+      --   return math.floor(vim.o.columns * 0.25)
+      -- end,
+      -- on_open = function(win)
+      --   vim.api.nvim_win_set_config(win, { zindex = 100 })
+      -- end,
     },
   },
 
@@ -91,21 +91,47 @@ return {
       require("incline").setup({
         highlight = {
           groups = {
-            InclineNormal = { guibg = "#303270", guifg = "#a9b1d6" },
+            -- InclineNormal = { guibg = "#303270", guifg = "#a9b1d6" },
             InclineNormalNC = { guibg = "none", guifg = "#a9b1d6" },
           },
         },
-        window = { margin = { vertical = 0, horizontal = 1 } },
+        window = {
+          placement = { vertical = "bottom", horizontal = "center" },
+          margin = { vertical = 0, horizontal = 0 },
+          padding = 5,
+        },
         hide = { cursorline = true },
         render = function(props)
           local filename = vim.fn.fnamemodify(vim.api.nvim_buf_get_name(props.buf), ":t")
           if vim.bo[props.buf].modified then
-            filename = "[*]" .. filename
+            filename = "[unsaved] " .. filename
+          end
+
+          local function diagnostic_label()
+            local icons = { error = "", warn = "", info = "", hint = "" }
+            local label = {}
+
+            for severity, icon in pairs(icons) do
+              local n = #vim.diagnostic.get(props.buf, { severity = vim.diagnostic.severity[string.upper(severity)] })
+              if n > 0 then
+                table.insert(label, { icon .. " " .. n .. " ", group = "DiagnosticSign" .. severity })
+              end
+            end
+            if #label > 0 then
+              table.insert(label, { "┊ " })
+            end
+            return label
           end
 
           local icon, color = require("nvim-web-devicons").get_icon_color(filename)
 
-          return { { icon, guifg = color }, { " " }, { filename } }
+          return {
+            { diagnostic_label() },
+            { icon, guifg = color },
+            { " " },
+            { filename },
+            { guibg = "none" },
+          }
         end,
       })
     end,

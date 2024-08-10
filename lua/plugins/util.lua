@@ -18,4 +18,16 @@ return {
 
   -- View undo history
   { "mbbill/undotree", lazy = true, cmd = "UndotreeToggle" },
+
+  {
+    "smjonas/inc-rename.nvim",
+    config = function()
+      require("inc_rename").setup({
+        input_buffer_type = "dressing",
+      })
+    end,
+  },
+
+  -- Multiple cursors
+  -- { "mg979/vim-visual-multi" },
 }
