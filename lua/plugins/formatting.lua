@@ -4,7 +4,7 @@ return {
     opts = function(_, opts)
       local nls = require("null-ls").builtins
       opts.sources = { --override lazyvim's default sources
-        nls.code_actions.refactoring,
+        -- nls.code_actions.refactoring,
         nls.completion.luasnip,
         -- typescript
         nls.formatting.biome.with({

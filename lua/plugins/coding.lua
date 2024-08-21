@@ -37,8 +37,74 @@ return {
   { "dmmulroy/ts-error-translator.nvim" },
 
   -- Map jj or jk to escape
-  { "max397574/better-escape.nvim", opts = {} },
+  {
+    "max397574/better-escape.nvim",
+    opts = {
+      timeout = vim.o.timeoutlen,
+      default_mappings = true,
+      mappings = {
+        i = {
+          j = {
+            -- These can all also be functions
+            k = "<Esc>",
+            j = "<Esc>",
+          },
+        },
+        c = {
+          j = {
+            k = "<Esc>",
+            j = "<Esc>",
+          },
+        },
+        t = {
+          j = {
+            k = "<Esc>",
+            j = "<Esc>",
+          },
+        },
+        v = {
+          j = {
+            k = "<Esc>",
+          },
+        },
+        s = {
+          j = {
+            k = "<Esc>",
+          },
+        },
+      },
+    },
+  },
 
   -- Switch between relative and absolute line numbers with ease
   { "cpea2506/relative-toggle.nvim" },
+
+  -- Use the w, e, b motions like a spider. Move by subwords and skip insignificant punctuation.
+  {
+    "chrisgrieser/nvim-spider",
+    lazy = true,
+    config = function()
+      require("spider").motion("e", {
+        customPatterns = { "const .", "let .", "var ." },
+      })
+    end,
+    opts = {
+      skipInsignificantPunctuation = false,
+      consistentOperatorPending = false, -- see "Consistent Operator-pending Mode" in the README
+      subwordMovement = true,
+      customPatterns = {}, -- check "Custom Movement Patterns" in the README for details
+    },
+    keys = {
+      {
+        "w",
+        "<cmd>lua require('spider').motion('w')<CR>",
+        mode = { "n", "o", "x" },
+      },
+      {
+        "e",
+        "<cmd>lua require('spider').motion('e')<CR>",
+        mode = { "n", "o", "x" },
+      },
+    },
+  },
 }

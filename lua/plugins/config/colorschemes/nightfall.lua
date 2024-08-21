@@ -6,7 +6,7 @@ require("nightfall").setup({
   styles = {
     comments = { italic = true },
     keywords = { italic = true },
-    functions = {},
+    functions = { italic, bold = true },
     variables = {},
     numbers = {},
     conditionals = {},

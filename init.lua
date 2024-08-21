@@ -1,7 +1,6 @@
 -- IDEAS
 --   conventional-commit.nvim: show popup or steps to set a commit, like better-commits (cli)
 --   font-picker.nvim: show 2 panes side-by-side, left is font list, right is preview
-
 require("config.core") -- Bootstrap lazy.nvim & LazyVim
 
 -- 󰘧 Personal Configurations
@@ -33,8 +32,9 @@ require("plugins.config.obsidian")
 -- require("plugins.config.gen") -- generate text using LLMs with customizable prompts
 
 -- 󰘧 Colorscheme
+require("plugins.config.colorschemes.nightfall")
 -- tokyonight | night-owl | rose-pine | catppuccin | tokyodark | nightfall
-set_colorscheme("nightfall", true) -- (colorscheme: string, hasConfigFile: boolean)
+vim.cmd.colorscheme("nightfall")
 
 -- Disable diagnostic virtual_text for tiny-inline-diagnostic.nvim
 -- vim.diagnostic.config({ virtual_text = false })

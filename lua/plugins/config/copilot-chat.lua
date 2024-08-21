@@ -1,3 +1,6 @@
+-- Registers copilot-chat source and enables it for copilot-chat filetype (so copilot chat window)
+require("CopilotChat.integrations.cmp").setup()
+
 local good_commit_prompt = require("plugins.config.llm_prompts.good_commit").prompt
 
 local select = require("CopilotChat.select")

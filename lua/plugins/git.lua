@@ -1,6 +1,6 @@
 return {
   -- Dealing with conflicts !
-  -- { "akinsho/git-conflict.nvim", version = "*", config = true },
+  { "akinsho/git-conflict.nvim", version = "*", config = true },
   -- https://github.com/echasnovski/mini.diff
 
   {

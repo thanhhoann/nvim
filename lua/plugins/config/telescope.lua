@@ -1,8 +1,10 @@
 local open_with_trouble = require("trouble.sources.telescope").open
+local z_utils = require("telescope._extensions.zoxide.utils")
 
 local telescope = require("telescope")
 local actions = require("telescope.actions")
 local config = require("telescope.config")
+local builtin = require("telescope.builtin")
 
 -- Clone the default Telescope configuration
 local vimgrep_arguments = { unpack(config.values.vimgrep_arguments) }
@@ -47,6 +49,46 @@ telescope.setup({
       layout_config = { height = 0.4 },
     },
   },
+  extensions = {
+    zoxide = {
+      prompt_title = "[ Zoxide List ]",
+
+      -- Zoxide list command with score
+      list_command = "zoxide query -ls",
+      mappings = {
+        default = {
+          action = function(selection)
+            -- vim.cmd.edit(selection.path)
+            builtin.find_files({ cwd = selection.path })
+          end,
+          after_action = function(selection)
+            print("Changed to " .. selection.path)
+          end,
+        },
+        ["<C-s>"] = { action = z_utils.create_basic_command("split") },
+        ["<C-v>"] = { action = z_utils.create_basic_command("vsplit") },
+        ["<C-e>"] = { action = z_utils.create_basic_command("edit") },
+        ["<C-b>"] = {
+          keepinsert = true,
+          action = function(selection)
+            builtin.file_browser({ cwd = selection.path })
+          end,
+        },
+        ["<C-f>"] = {
+          keepinsert = true,
+          action = function(selection)
+            builtin.find_files({ cwd = selection.path })
+          end,
+        },
+        ["<C-t>"] = {
+          action = function(selection)
+            vim.cmd.tcd(selection.path)
+          end,
+        },
+      },
+    },
+  },
 })
 
 telescope.load_extension("yank_history")
+telescope.load_extension("zoxide")

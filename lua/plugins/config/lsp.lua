@@ -27,3 +27,21 @@ require("lspconfig").vtsls.setup({
     },
   },
 })
+
+require("lspconfig").jsonls.setup({
+  settings = {
+    json = {
+      schemas = require("schemastore").json.schemas({
+        extra = {
+          {
+            description = "Biome JSON Schema",
+            fileMatch = "biome.jsonc",
+            name = "biome.jsonc",
+            url = "https://biomejs.dev/schemas/1.8.3/schema.json",
+          },
+        },
+      }),
+      validate = { enable = true },
+    },
+  },
+})

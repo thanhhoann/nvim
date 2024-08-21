@@ -2,6 +2,7 @@ return {
   {
     "neovim/nvim-lspconfig",
     opts = {
+      document_highlight = { enabled = false },
       diagnostics = {
         underline = true,
         update_in_insert = false,
@@ -22,14 +23,14 @@ return {
         vtsls = {
           settings = {
             typescript = {
-              -- inlayHints = {
-              --   enumMemberValues = { enabled = false },
-              --   functionLikeReturnTypes = { enabled = false },
-              --   parameterNames = { enabled = false },
-              --   parameterTypes = { enabled = false },
-              --   propertyDeclarationTypes = { enabled = false },
-              --   variableTypes = { enabled = false },
-              -- },
+              inlayHints = {
+                enumMemberValues = { enabled = false },
+                functionLikeReturnTypes = { enabled = false },
+                parameterNames = { enabled = false },
+                parameterTypes = { enabled = false },
+                propertyDeclarationTypes = { enabled = false },
+                variableTypes = { enabled = false },
+              },
             },
           },
         },

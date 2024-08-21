@@ -11,9 +11,7 @@ require("tokyonight").setup({
     -- Value is any valid attr-list value for `:help nvim_set_hl`
     -- • fg: color name or "#RRGGBB", see note.
     -- • bg: color name or "#RRGGBB", see note.
-    -- • sp: color name or "#RRGGBB"
-    -- • blend: integer between 0 and 100
-    -- • bold: boolean
+    -- • sp: color name or "#RRGGBB" • blend: integer between 0 and 100 • bold: boolean
     -- • standout: boolean
     -- • underline: boolean
     -- • undercurl: boolean

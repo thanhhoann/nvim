@@ -92,11 +92,18 @@ key("n", "<leader>cz", function()
     require("CopilotChat").ask(prompt)
   end
 end)
+key("n", "<leader>as", "<CMD>CopilotChatStop<CR>")
 
 -- oil
 key("n", "-", "<CMD>Oil --float<CR>")
 
--- inc-rename
-key("n", "<leader>r", function()
-  return ":IncRename " .. vim.fn.expand("<cword>")
-end, { expr = true })
+-- Telescope zoxide
+key("n", "zi", "<CMD>Telescope zoxide list<CR>")
+
+-- spider-web
+key("n", "cw", "c<cmd>lua require('spider').motion('e')<CR>")
+key("i", "<C-f>", "<Esc>l<cmd>lua require('spider').motion('w')<CR>i")
+key("i", "<C-b>", "<Esc><cmd>lua require('spider').motion('b')<CR>i")
+
+-- aerial.nvim
+key("n", "cn", "<CMD>AerialToggle<CR>")
