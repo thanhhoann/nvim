@@ -1,6 +1,7 @@
 return {
   {
     "hrsh7th/nvim-cmp",
+    event = "InsertEnter",
     dependencies = {
       "hrsh7th/cmp-emoji",
       "saadparwaiz1/cmp_luasnip",
@@ -86,6 +87,6 @@ return {
   },
 
   -- SOURCES
-  { "FelipeLema/cmp-async-path" },
-  { "andersevenrud/cmp-tmux" },
+  -- { "FelipeLema/cmp-async-path" },
+  -- { "andersevenrud/cmp-tmux" },
 }

@@ -1,12 +1,17 @@
 return {
   {
     "L3MON4D3/LuaSnip",
+    event = "InsertEnter",
+    config = function()
+      require("plugins.config.luasnip")
+    end,
     build = (not LazyVim.is_win())
         and "echo 'NOTE: jsregexp is optional, so not a big deal if it fails to build'; make install_jsregexp"
       or nil,
     dependencies = {
       {
         "rafamadriz/friendly-snippets",
+        event = "VeryLazy",
         config = function()
           require("luasnip.loaders.from_vscode").lazy_load()
         end,
@@ -33,12 +38,13 @@ return {
     },
   },
 
-  -- Better TS error messages
-  { "dmmulroy/ts-error-translator.nvim" },
+  -- Better TS error messages - for tsserver
+  -- { "dmmulroy/ts-error-translator.nvim" },
 
   -- Map jj or jk to escape
   {
     "max397574/better-escape.nvim",
+    event = "VeryLazy",
     opts = {
       timeout = vim.o.timeoutlen,
       default_mappings = true,
@@ -82,7 +88,7 @@ return {
   -- Use the w, e, b motions like a spider. Move by subwords and skip insignificant punctuation.
   {
     "chrisgrieser/nvim-spider",
-    lazy = true,
+    event = "VeryLazy",
     config = function()
       require("spider").motion("e", {
         customPatterns = { "const .", "let .", "var ." },
@@ -107,4 +113,49 @@ return {
       },
     },
   },
+
+  {
+    "mawkler/demicolon.nvim",
+    event = "VeryLazy",
+    dependencies = {
+      -- "jinh0/eyeliner.nvim",
+      "nvim-treesitter/nvim-treesitter",
+      "nvim-treesitter/nvim-treesitter-textobjects",
+    },
+    keys = { ";", ",", "t", "f", "T", "F", "]", "[", "]d", "[d" },
+    opts = {},
+    -- config = function()
+    --   require("demicolon").setup({
+    --     keymaps = {
+    --       horizontal_motions = false,
+    --     },
+    --   })
+    --
+    --   local function eyeliner_jump(key)
+    --     local forward = vim.list_contains({ "t", "f" }, key)
+    --     return function()
+    --       require("eyeliner").highlight({ forward = forward })
+    --       return require("demicolon.jump").horizontal_jump(key)()
+    --     end
+    --   end
+    --
+    --   local nxo = { "n", "x", "o" }
+    --   local opts = { expr = true }
+    --
+    --   vim.keymap.set(nxo, "f", eyeliner_jump("f"), opts)
+    --   vim.keymap.set(nxo, "F", eyeliner_jump("F"), opts)
+    --   vim.keymap.set(nxo, "t", eyeliner_jump("t"), opts)
+    --   vim.keymap.set(nxo, "T", eyeliner_jump("T"), opts)
+    -- end,
+  },
+
+  -- {
+  --   "jinh0/eyeliner.nvim",
+  --   keys = { "t", "f", "T", "F" },
+  --   opts = {
+  --     highlight_on_key = true,
+  --     dim = true,
+  --     default_keymaps = false,
+  --   },
+  -- },
 }

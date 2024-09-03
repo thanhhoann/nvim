@@ -34,9 +34,10 @@ key("i", "<esc>", "<esc>:w<cr>")
 key("v", "J", ":m '>+1<cr>gv=gv")
 key("v", "K", ":m '<-2<cr>gv=gv")
 
--- lsp
--- code action
+-- lsp code action
 key("n", "ca", "<cmd>lua vim.lsp.buf.code_action()<cr>")
+
+key("n", "<leader>Q", [[:let @a = input("Edit macro:", @a)<CR>]])
 
 -- tmux
 key(
@@ -93,6 +94,7 @@ key("n", "<leader>cz", function()
   end
 end)
 key("n", "<leader>as", "<CMD>CopilotChatStop<CR>")
+key("n", "<leader>ag", "<CMD>CopilotChatCommitStaged<CR>")
 
 -- oil
 key("n", "-", "<CMD>Oil --float<CR>")
@@ -107,3 +109,6 @@ key("i", "<C-b>", "<Esc><cmd>lua require('spider').motion('b')<CR>i")
 
 -- aerial.nvim
 key("n", "cn", "<CMD>AerialToggle<CR>")
+
+-- IconPicker
+key({ "n", "i" }, "zc", "<CMD>IconPickerInsert<CR>")

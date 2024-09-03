@@ -1,6 +1,8 @@
 return {
   {
     "folke/noice.nvim",
+    lazy = false,
+    -- event = "VeryLazy",
     opts = function(_, opts)
       table.insert(opts.routes, {
         filter = { event = "notify", find = "No information available" },
@@ -14,6 +16,10 @@ return {
   -- Neovim Least Important Plugin
   {
     "nvim-telescope/telescope.nvim",
+    lazy = false,
+    -- config = function()
+    --   require("plugins.config.telescope")
+    -- end,
     dependencies = {
       {
         "nvim-telescope/telescope-live-grep-args.nvim",
@@ -29,7 +35,7 @@ return {
         desc = "Find Plugin File",
       },
       {
-        "<leader>fz",
+        "<leader>/",
         function()
           require("telescope.builtin").current_buffer_fuzzy_find()
         end,
@@ -54,7 +60,7 @@ return {
         desc = "Lists Diagnostics for all open buffers or a specific buffer",
       },
       {
-        "<leader>fo",
+        "<leader>o",
         function()
           require("telescope.builtin").oldfiles()
         end,
@@ -80,22 +86,23 @@ return {
   },
 
   -- UI for Telescope
-  { "nvim-telescope/telescope-ui-select.nvim" },
+  { "nvim-telescope/telescope-ui-select.nvim", event = "VeryLazy" },
 
   -- Integeration between Telescope and Zoxide
-  { "jvgrootveld/telescope-zoxide" },
+  { "jvgrootveld/telescope-zoxide", event = "VeryLazy" },
 
   -- Telescope + Nerd Icons
-  {
-    "2kabhishek/nerdy.nvim",
-    dependencies = {
-      "stevearc/dressing.nvim",
-      "nvim-telescope/telescope.nvim",
-    },
-  },
+  -- {
+  --   "2kabhishek/nerdy.nvim",
+  --   dependencies = {
+  --     "stevearc/dressing.nvim",
+  --     "nvim-telescope/telescope.nvim",
+  --   },
+  -- },
 
   {
     "folke/trouble.nvim",
+    event = "VeryLazy",
     cmd = { "Trouble" },
     opts = { modes = {
       lsp = {
@@ -140,45 +147,46 @@ return {
     },
   },
 
-  {
-    "folke/flash.nvim",
-    event = "VeryLazy",
-    vscode = true,
-    ---@type Flash.Config
-    opts = {},
-    keys = {
-      {
-        "s",
-        mode = { "n", "x", "o" },
-        function()
-          require("flash").jump()
-        end,
-        desc = "Flash",
-      },
-      {
-        "S",
-        mode = { "n", "o", "x" },
-        function()
-          require("flash").treesitter()
-        end,
-        desc = "Flash Treesitter",
-      },
-      { "r", false },
-      { "R", false },
-      {
-        "<c-s>",
-        mode = { "c" },
-        function()
-          require("flash").toggle()
-        end,
-        desc = "Toggle Flash Search",
-      },
-    },
-  },
+  -- {
+  --   "folke/flash.nvim",
+  --   event = "VeryLazy",
+  --   vscode = true,
+  --   ---@type Flash.Config
+  --   opts = {},
+  --   keys = {
+  --     {
+  --       "s",
+  --       mode = { "n", "x", "o" },
+  --       function()
+  --         require("flash").jump()
+  --       end,
+  --       desc = "Flash",
+  --     },
+  --     {
+  --       "S",
+  --       mode = { "n", "o", "x" },
+  --       function()
+  --         require("flash").treesitter()
+  --       end,
+  --       desc = "Flash Treesitter",
+  --     },
+  --     { "r", false },
+  --     { "R", false },
+  --     {
+  --       "<c-s>",
+  --       mode = { "c" },
+  --       function()
+  --         require("flash").toggle()
+  --       end,
+  --       desc = "Toggle Flash Search",
+  --     },
+  --   },
+  -- },
 
   -- Improved UI and workflow for the Neovim quickfix
   {
     "stevearc/quicker.nvim",
+    event = "VeryLazy",
     ---@module "quicker"
     ---@type quicker.SetupOptions
     opts = {},
@@ -201,9 +209,9 @@ return {
   },
 
   -- Another bundle of several improvements including a floating preview window and fzf integration.
-  { "kevinhwang91/nvim-bqf" },
+  { "kevinhwang91/nvim-bqf", event = "VeryLazy" },
   -- Adds some useful mappings and default behaviors.
-  { "romainl/vim-qf" },
+  -- { "romainl/vim-qf" },
 
   {
     "folke/edgy.nvim",
@@ -340,6 +348,14 @@ return {
         })
       end
       return opts
+    end,
+  },
+
+  {
+    "CopilotC-Nvim/CopilotChat.nvim",
+    -- event = "VeryLazy",
+    config = function()
+      require("plugins.config.copilot-chat")
     end,
   },
 }

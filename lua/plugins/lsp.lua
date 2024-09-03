@@ -1,6 +1,10 @@
 return {
   {
     "neovim/nvim-lspconfig",
+    event = "InsertEnter",
+    config = function()
+      require("plugins.config.lsp")
+    end,
     opts = {
       document_highlight = { enabled = false },
       diagnostics = {
@@ -49,5 +53,5 @@ return {
   },
 
   -- Add icons for completion items
-  { "onsails/lspkind.nvim" },
+  { "onsails/lspkind.nvim", event = "VeryLazy" },
 }

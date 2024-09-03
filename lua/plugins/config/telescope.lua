@@ -58,7 +58,7 @@ telescope.setup({
       mappings = {
         default = {
           action = function(selection)
-            -- vim.cmd.edit(selection.path)
+            vim.cmd.edit(selection.path)
             builtin.find_files({ cwd = selection.path })
           end,
           after_action = function(selection)

@@ -11,5 +11,5 @@ return {
   -- { "davidmh/mdx.nvim", opts = {} },
 
   -- Align markdown tables
-  { "godlygeek/tabular" },
+  -- { "godlygeek/tabular" },
 }

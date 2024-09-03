@@ -35,6 +35,9 @@ return {
   -- },
   {
     "stevearc/oil.nvim",
+    config = function()
+      require("plugins.config.oil")
+    end,
     opts = {},
     -- Optional dependencies
     dependencies = { "nvim-tree/nvim-web-devicons" },

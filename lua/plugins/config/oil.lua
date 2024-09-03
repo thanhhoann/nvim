@@ -7,7 +7,7 @@ require("oil").setup({
   columns = {
     "icon",
     -- "permissions",
-    -- "size",
+    "size",
     -- "mtime",
   },
   -- Buffer-local options to use for oil buffers
@@ -27,12 +27,12 @@ require("oil").setup({
     concealcursor = "nvic",
   },
   -- Send deleted files to the trash instead of permanently deleting them (:help oil-trash)
-  delete_to_trash = false,
+  delete_to_trash = true,
   -- Skip the confirmation popup for simple operations (:help oil.skip_confirm_for_simple_edits)
-  skip_confirm_for_simple_edits = false,
+  skip_confirm_for_simple_edits = true,
   -- Selecting a new/moved/renamed file or directory will prompt you to save changes first
   -- (:help prompt_save_on_select_new_entry)
-  prompt_save_on_select_new_entry = true,
+  prompt_save_on_select_new_entry = false,
   -- Oil will automatically delete hidden buffers after this delay
   -- You can set the delay to false to disable cleanup entirely
   -- Note that the cleanup process only starts when none of the oil buffers are currently displayed
@@ -42,13 +42,13 @@ require("oil").setup({
     timeout_ms = 1000,
     -- Set to true to autosave buffers that are updated with LSP willRenameFiles
     -- Set to "unmodified" to only save unmodified buffers
-    autosave_changes = false,
+    autosave_changes = true,
   },
   -- Constrain the cursor to the editable parts of the oil buffer
   -- Set to `false` to disable, or "name" to keep it on the file names
   constrain_cursor = "editable",
   -- Set to true to watch the filesystem for changes and reload oil
-  watch_for_changes = false,
+  watch_for_changes = true,
   -- Keymaps in oil buffer. Can be any value that `vim.keymap.set` accepts OR a table of keymap
   -- options with a `callback` (e.g. { callback = function() ... end, desc = "", mode = "n" })
   -- Additionally, if it is a string that matches "actions.<name>",
@@ -77,7 +77,7 @@ require("oil").setup({
   use_default_keymaps = true,
   view_options = {
     -- Show files and directories that start with "."
-    show_hidden = false,
+    show_hidden = true,
     -- This function defines what is considered a "hidden" file
     is_hidden_file = function(name, bufnr)
       return vim.startswith(name, ".")

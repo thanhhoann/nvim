@@ -25,7 +25,6 @@ vim.api.nvim_create_autocmd("TextYankPost", {
     vim.highlight.on_yank()
   end,
 })
-
 -- resize splits if window got resized
 vim.api.nvim_create_autocmd({ "VimResized" }, {
   group = augroup("resize_splits"),
@@ -115,6 +114,26 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
     end
     local file = vim.uv.fs_realpath(event.match) or event.match
     vim.fn.mkdir(vim.fn.fnamemodify(file, ":p:h"), "p")
+  end,
+})
+
+vim.api.nvim_create_autocmd("VimEnter", {
+  once = true,
+  callback = function()
+    math.randomseed(os.time())
+    local fg_color = tostring(math.random(0, 12))
+    local hi_setter = "hi DashboardHeader ctermfg="
+    vim.cmd(hi_setter .. fg_color)
+  end,
+})
+
+vim.api.nvim_create_autocmd("VimEnter", {
+  once = true,
+  callback = function()
+    math.randomseed(os.time())
+    local fg_color = tostring(math.random(0, 22))
+    local hi_setter = "hi AlphaHeader ctermfg="
+    vim.cmd(hi_setter .. fg_color)
   end,
 })
 
